@@ -47,6 +47,7 @@ jobs:
 
   preview:
     if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'pull_request'
+    name: Deploy preview
     needs: pr
     runs-on: ubuntu-latest
     timeout-minutes: 2
@@ -83,6 +84,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy preview
+        id: deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
@@ -96,7 +98,7 @@ jobs:
           message: |
             <!-- _(run_id **${{ github.run_id }}**)_ -->
 
-            # deployed preview: https://comma-web--pr${{ needs.pr.outputs.number }}.web.app
+            # deployed preview: ${{ steps.deploy.outputs.details_url }}
 
             Welcome! Make sure to:
             * read the contributing guidelines
@@ -107,7 +109,8 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
   update_pr_check:
-    if: always() && github.event.workflow_run.event == 'pull_request'
+    if: always() && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'pull_request'
+    name: Update PR Check
     needs: preview
     runs-on: ubuntu-latest
     timeout-minutes: 1
