@@ -29,7 +29,7 @@
     </p>
     <p>
       Check out the OBD-C spec <a
-        href="https://github.com/commaai/neo/blob/master/car_harness/OBD-C.sch.pdf"
+        href="https://github.com/commaai/hardware/blob/master/harness/OBD-C.sch.pdf"
         target="_blank">here</a
       >.
     </p>

@@ -81,7 +81,7 @@
     <strong>DIY Mounts</strong>
     <p>
       3D print comma two, three, and 3X mounts from our <a
-        href="https://github.com/commaai/neo/tree/master/case"
+        href="https://github.com/commaai/hardware"
         target="_blank">open source</a
       > files.
     </p>

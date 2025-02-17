@@ -48,7 +48,7 @@
     <strong>Open Source</strong>
     <p>
       Buy it here or build it yourself. Harness connectors are <a
-        href="https://github.com/commaai/neo/tree/master/car_harness"
+        href="https://github.com/commaai/hardware/tree/master/harness"
         target="_blank">open source</a
       >.
     </p>

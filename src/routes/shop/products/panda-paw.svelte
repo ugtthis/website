@@ -30,7 +30,7 @@
     <strong>Open Source</strong>
     <p>
       Buy it here or build it yourself. panda paw are
-      <a href="https://github.com/commaai/neo/tree/master/paw" target="_blank">open source hardware</a>.
+      <a href="https://github.com/commaai/hardware/tree/master/tools/paw" target="_blank">open source hardware</a>.
     </p>
   </div>
 </Product>
