@@ -17,12 +17,12 @@
   export let getCartNote = null;
   export let previousPrice = null;
   export let sale = false;
-  export let backordered = null;
+  export let backordered = false;
 
   export let VariantSelector = null;
   function handleVariantSelection(variant) {
     selectedVariantId = variant?.id || null;
-    backordered = variant?.currentlyNotInStock ? '1-4 weeks' : null;
+    backordered = variant?.currentlyNotInStock;
   }
 
   let currentImageIndex = 0;
@@ -65,7 +65,7 @@
     if (product.forceOutOfStock || (selectedVariant && !selectedVariant.availableForSale)) {
       addToCartLabel = "Out of stock";
     } else if (backordered) {
-      addToCartLabel = `Add to cart (ships in ${backordered})`;
+      addToCartLabel = "Add to cart (backordered)";
     } else {
       addToCartLabel = "Add to cart";
     }
