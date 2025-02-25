@@ -18,6 +18,8 @@
   import { THREEX_PRICE, CAR_HARNESS_PRICE } from '$lib/constants/prices.js';
 
   const brand_images = import.meta.glob('$lib/images/vehicles/brand-icons/*.png', { eager: true });
+
+  const vehicleCount = Object.values(vehicles).reduce((sum, list) => sum + list.length, 0);
 </script>
 
 <div class="vehicles-cover-image"></div>
@@ -26,7 +28,7 @@
   <div class="container">
     <Grid columnGap="4rem" rowGap="2rem" templateColumns="1.25fr 1fr">
       <div class="title">
-        openpilot supports 275+ vehicles
+        openpilot supports {Math.round(vehicleCount / 25) * 25}+ vehicles
       </div>
       <div class="description">
         A supported vehicle is one that just works when you install a comma 3X.
