@@ -85,7 +85,7 @@
       <li>long OBD-C cable (9.5 ft)</li>
       <li>USB-C coupler</li>
     </ul>
-    <p><strong>Nissan and J533</strong></p>
+    <p><strong>Rivian A, Tesla A, Tesla B, Nissan, and J533</strong></p>
     <ul>
       <li>comma power</li>
       <li>harness connector</li>
