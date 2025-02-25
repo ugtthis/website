@@ -24,6 +24,7 @@
   export let product;
 </script>
 
+<!-- TODO: support custom harness backorder overrides -->
 <Product {product} VariantSelector={HarnessSelector} autoSelectFirstVariant={false}>
   <div slot="notes">
     <NoteCard title="Compatibility">

@@ -60,7 +60,7 @@
     selectedHarness = value;
     if (value) {
       additionalProductIds = [value?.id]
-      backordered = value.currentlyNotInStock ? (value.backordered || '1-4 weeks') : null;
+      backordered = value.currentlyNotInStock ? `ships in ${(value.backordered || '1-4 weeks')}` : null;
     } else {
       additionalProductIds = [];
       backordered = null;
