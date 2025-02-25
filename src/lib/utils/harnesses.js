@@ -37,7 +37,7 @@ async function initializeHarnesses() {
         car: model.name,
         package: model.package,
         angledMount: model.angled_mount,
-        backordered: null,
+        backordered: harness?.backordered,  // these overrides are only shown if the harness is out of stock in Shopify
       };
     }).filter(Boolean);
   });
