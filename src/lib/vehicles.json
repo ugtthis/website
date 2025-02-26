@@ -379,6 +379,32 @@
       ]
     },
     {
+      "name": "Ford F-150 2021-23",
+      "model": "F-150",
+      "years": "2021-23",
+      "year_list": "2021, 2022, 2023",
+      "package": "Co-Pilot360 Assist 2.0",
+      "angled_mount": true,
+      "video_link": "",
+      "harness_connector": "Ford Q4",
+      "detail_sentence": "openpilot upgrades your <strong>Ford F-150</strong> with automated lane centering <strong>at all speeds</strong>, and adaptive cruise control <strong>that automatically resumes from a stop</strong>.",
+      "footnotes": [
+      ]
+    },
+    {
+      "name": "Ford F-150 Hybrid 2021-23",
+      "model": "F-150 Hybrid",
+      "years": "2021-23",
+      "year_list": "2021, 2022, 2023",
+      "package": "Co-Pilot360 Assist 2.0",
+      "angled_mount": true,
+      "video_link": "",
+      "harness_connector": "Ford Q4",
+      "detail_sentence": "openpilot upgrades your <strong>Ford F-150 Hybrid</strong> with automated lane centering <strong>at all speeds</strong>, and adaptive cruise control <strong>that automatically resumes from a stop</strong>.",
+      "footnotes": [
+      ]
+    },
+    {
       "name": "Ford Focus 2018",
       "model": "Focus",
       "years": "2018",
@@ -494,6 +520,32 @@
       "video_link": "",
       "harness_connector": "Ford Q3",
       "detail_sentence": "openpilot upgrades your <strong>Ford Maverick Hybrid</strong> with automated lane centering <strong>at all speeds</strong>, and adaptive cruise control <strong>that automatically resumes from a stop</strong>. Traffic light and stop sign handling is also available in <a href='https://blog.comma.ai/090release/#experimental-mode' target='_blank' class='highlight'>Experimental mode</a>.",
+      "footnotes": [
+      ]
+    },
+    {
+      "name": "Ford Mustang Mach-E 2021-23",
+      "model": "Mustang Mach-E",
+      "years": "2021-23",
+      "year_list": "2021, 2022, 2023",
+      "package": "All",
+      "angled_mount": false,
+      "video_link": "",
+      "harness_connector": "Ford Q4",
+      "detail_sentence": "openpilot upgrades your <strong>Ford Mustang Mach-E</strong> with automated lane centering <strong>at all speeds</strong>, and adaptive cruise control <strong>that automatically resumes from a stop</strong>.",
+      "footnotes": [
+      ]
+    },
+    {
+      "name": "Ford Ranger 2024",
+      "model": "Ranger",
+      "years": "2024",
+      "year_list": "2024",
+      "package": "Adaptive Cruise Control with Lane Centering",
+      "angled_mount": false,
+      "video_link": "",
+      "harness_connector": "Ford Q4",
+      "detail_sentence": "openpilot upgrades your <strong>Ford Ranger</strong> with automated lane centering <strong>at all speeds</strong>, and adaptive cruise control <strong>that automatically resumes from a stop</strong>.",
       "footnotes": [
       ]
     }
@@ -620,10 +672,10 @@
       ]
     },
     {
-      "name": "Genesis GV70 (2.5T Trim, without HDA II) 2022-23",
+      "name": "Genesis GV70 (2.5T Trim, without HDA II) 2022-24",
       "model": "GV70 (2.5T Trim, without HDA II)",
-      "years": "2022-23",
-      "year_list": "2022, 2023",
+      "years": "2022-24",
+      "year_list": "2022, 2023, 2024",
       "package": "All",
       "angled_mount": false,
       "video_link": "",
@@ -662,10 +714,10 @@
       ]
     },
     {
-      "name": "Genesis GV70 Electrified (with HDA II) 2023",
+      "name": "Genesis GV70 Electrified (with HDA II) 2023-24",
       "model": "GV70 Electrified (with HDA II)",
-      "years": "2023",
-      "year_list": "2023",
+      "years": "2023-24",
+      "year_list": "2023, 2024",
       "package": "Highway Driving Assist II",
       "angled_mount": false,
       "video_link": "",
@@ -1273,6 +1325,19 @@
       ]
     },
     {
+      "name": "Hyundai Kona 2022",
+      "model": "Kona",
+      "years": "2022",
+      "year_list": "2022",
+      "package": "Smart Cruise Control (SCC)",
+      "angled_mount": false,
+      "video_link": "",
+      "harness_connector": "Hyundai O",
+      "detail_sentence": "openpilot upgrades your <strong>Hyundai Kona</strong> with automated lane centering <strong>at all speeds</strong>, and adaptive cruise control <strong>that automatically resumes from a stop</strong>.",
+      "footnotes": [
+      ]
+    },
+    {
       "name": "Hyundai Kona Electric 2018-21",
       "model": "Kona Electric",
       "years": "2018-21",
@@ -1322,6 +1387,19 @@
       "video_link": "",
       "harness_connector": "Hyundai I",
       "detail_sentence": "openpilot upgrades your <strong>Hyundai Kona Hybrid</strong> with automated lane centering <strong>at all speeds</strong>, and adaptive cruise control <strong>that automatically resumes from a stop</strong>.",
+      "footnotes": [
+      ]
+    },
+    {
+      "name": "Hyundai Nexo 2021",
+      "model": "Nexo",
+      "years": "2021",
+      "year_list": "2021",
+      "package": "All",
+      "angled_mount": false,
+      "video_link": "",
+      "harness_connector": "Hyundai H",
+      "detail_sentence": "openpilot upgrades your <strong>Hyundai Nexo</strong> with automated lane centering <strong>at all speeds</strong>, and adaptive cruise control <strong>that automatically resumes from a stop</strong>.",
       "footnotes": [
       ]
     },
@@ -2527,6 +2605,34 @@
       ]
     }
   ],
+  "Rivian": [
+    {
+      "name": "Rivian R1S 2022-24",
+      "model": "R1S",
+      "years": "2022-24",
+      "year_list": "2022, 2023, 2024",
+      "package": "All",
+      "angled_mount": true,
+      "video_link": "",
+      "harness_connector": "Rivian A",
+      "detail_sentence": "openpilot upgrades your <strong>Rivian R1S</strong> with automated lane centering <strong>at all speeds</strong>, and adaptive cruise control <strong>that automatically resumes from a stop</strong>. Traffic light and stop sign handling is also available in <a href='https://blog.comma.ai/090release/#experimental-mode' target='_blank' class='highlight'>Experimental mode</a>.",
+      "footnotes": [
+      ]
+    },
+    {
+      "name": "Rivian R1T 2022-24",
+      "model": "R1T",
+      "years": "2022-24",
+      "year_list": "2022, 2023, 2024",
+      "package": "All",
+      "angled_mount": true,
+      "video_link": "",
+      "harness_connector": "Rivian A",
+      "detail_sentence": "openpilot upgrades your <strong>Rivian R1T</strong> with automated lane centering <strong>at all speeds</strong>, and adaptive cruise control <strong>that automatically resumes from a stop</strong>. Traffic light and stop sign handling is also available in <a href='https://blog.comma.ai/090release/#experimental-mode' target='_blank' class='highlight'>Experimental mode</a>.",
+      "footnotes": [
+      ]
+    }
+  ],
   "SEAT": [
     {
       "name": "SEAT Ateca 2016-23",
@@ -2834,6 +2940,64 @@
       "detail_sentence": "openpilot upgrades your <strong>Škoda Superb</strong> with automated lane centering <strong>at all speeds</strong>, and adaptive cruise control <strong>that automatically resumes from a stop</strong>.",
       "footnotes": [
         "Some \u0160koda vehicles are equipped with heated windshields, which are known to block GPS signal needed for some comma 3X functionality."
+      ]
+    }
+  ],
+  "Tesla": [
+    {
+      "name": "Tesla Model 3 (with HW3) 2019-23",
+      "model": "Model 3 (with HW3)",
+      "years": "2019-23",
+      "year_list": "2019, 2020, 2021, 2022, 2023",
+      "package": "All",
+      "angled_mount": false,
+      "video_link": "",
+      "harness_connector": "Tesla A",
+      "detail_sentence": "openpilot upgrades your <strong>Tesla Model 3 (with HW3)</strong> with automated lane centering <strong>at all speeds</strong>, and adaptive cruise control <strong>that automatically resumes from a stop</strong>.",
+      "footnotes": [
+        "Some 2023 model years have HW4. To check which hardware type your vehicle has, look for \u003cb\u003eAutopilot computer\u003c/b\u003e under \u003cb\u003eSoftware -\u003e Additional Vehicle Information\u003c/b\u003e on your vehicle\u0027s touchscreen. \u003c/br\u003e\u003c/br\u003eSee \u003ca href=\"https://www.notateslaapp.com/news/2173/how-to-check-if-your-tesla-has-hardware-4-ai4-or-hardware-3\"\u003ethis page\u003c/a\u003e for more information."
+      ]
+    },
+    {
+      "name": "Tesla Model 3 (with HW4) 2024",
+      "model": "Model 3 (with HW4)",
+      "years": "2024",
+      "year_list": "2024",
+      "package": "All",
+      "angled_mount": false,
+      "video_link": "",
+      "harness_connector": "Tesla B",
+      "detail_sentence": "openpilot upgrades your <strong>Tesla Model 3 (with HW4)</strong> with automated lane centering <strong>at all speeds</strong>, and adaptive cruise control <strong>that automatically resumes from a stop</strong>.",
+      "footnotes": [
+        "Some 2023 model years have HW4. To check which hardware type your vehicle has, look for \u003cb\u003eAutopilot computer\u003c/b\u003e under \u003cb\u003eSoftware -\u003e Additional Vehicle Information\u003c/b\u003e on your vehicle\u0027s touchscreen. \u003c/br\u003e\u003c/br\u003eSee \u003ca href=\"https://www.notateslaapp.com/news/2173/how-to-check-if-your-tesla-has-hardware-4-ai4-or-hardware-3\"\u003ethis page\u003c/a\u003e for more information."
+      ]
+    },
+    {
+      "name": "Tesla Model Y (with HW3) 2020-23",
+      "model": "Model Y (with HW3)",
+      "years": "2020-23",
+      "year_list": "2020, 2021, 2022, 2023",
+      "package": "All",
+      "angled_mount": false,
+      "video_link": "",
+      "harness_connector": "Tesla A",
+      "detail_sentence": "openpilot upgrades your <strong>Tesla Model Y (with HW3)</strong> with automated lane centering <strong>at all speeds</strong>, and adaptive cruise control <strong>that automatically resumes from a stop</strong>.",
+      "footnotes": [
+        "Some 2023 model years have HW4. To check which hardware type your vehicle has, look for \u003cb\u003eAutopilot computer\u003c/b\u003e under \u003cb\u003eSoftware -\u003e Additional Vehicle Information\u003c/b\u003e on your vehicle\u0027s touchscreen. \u003c/br\u003e\u003c/br\u003eSee \u003ca href=\"https://www.notateslaapp.com/news/2173/how-to-check-if-your-tesla-has-hardware-4-ai4-or-hardware-3\"\u003ethis page\u003c/a\u003e for more information."
+      ]
+    },
+    {
+      "name": "Tesla Model Y (with HW4) 2024",
+      "model": "Model Y (with HW4)",
+      "years": "2024",
+      "year_list": "2024",
+      "package": "All",
+      "angled_mount": false,
+      "video_link": "",
+      "harness_connector": "Tesla B",
+      "detail_sentence": "openpilot upgrades your <strong>Tesla Model Y (with HW4)</strong> with automated lane centering <strong>at all speeds</strong>, and adaptive cruise control <strong>that automatically resumes from a stop</strong>.",
+      "footnotes": [
+        "Some 2023 model years have HW4. To check which hardware type your vehicle has, look for \u003cb\u003eAutopilot computer\u003c/b\u003e under \u003cb\u003eSoftware -\u003e Additional Vehicle Information\u003c/b\u003e on your vehicle\u0027s touchscreen. \u003c/br\u003e\u003c/br\u003eSee \u003ca href=\"https://www.notateslaapp.com/news/2173/how-to-check-if-your-tesla-has-hardware-4-ai4-or-hardware-3\"\u003ethis page\u003c/a\u003e for more information."
       ]
     }
   ],
