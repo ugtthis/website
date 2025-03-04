@@ -7,8 +7,6 @@ OUT_FILE = os.path.join(WEB4_DIR, "src/lib/vehicles.json")
 
 if __name__ == '__main__':
   content = generate_cars_md(get_all_car_docs(), os.path.join(WEB4_DIR, "static/vehicles_template.json"))
-  # TODO: remove when we publish web4
-  content = content.replace("link-light-new-regular-text", "highlight")
   with open(OUT_FILE, "w") as f:
     f.write(content)
   print(f"Generated and written to {OUT_FILE}")
