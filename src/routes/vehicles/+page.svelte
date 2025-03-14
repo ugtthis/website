@@ -36,17 +36,6 @@
       </div>
     </Grid>
 
-    <hgroup class="headline">
-      <span>Select a brand</span>
-      <p>
-        If you don't see your car, it means that it is not currently supported.
-      </p>
-      <p>
-        <a href="https://github.com/commaai/openpilot/blob/master/docs/CARS.md#dont-see-your-car-here" class="highlight">Read here</a>
-        to learn which cars are good candidates for adding openpilot support.
-      </p>
-    </hgroup>
-
     <div class="compatibility-make-links">
       {#each Object.keys(vehicles) as brand}
         <div class="compatibility-make-element">
@@ -57,6 +46,23 @@
         </div>
       {/each}
     </div>
+
+    <hgroup class="headline">
+      <span>Don't see your car?</span>
+      <p>
+        If you don't see your car, it means that it is not currently supported.
+      </p>
+      <p>
+        If you have a modern car and some programing skills, you can likely add support for your car.
+      </p>
+      <p>
+        Watch
+        <a href="https://youtu.be/XxPS5TpTUnI" class="highlight">this talk</a>
+        and check out the
+        <a href="https://github.com/commaai/openpilot/blob/master/docs/CARS.md#dont-see-your-car-here" class="highlight">docs</a>
+        to learn more.
+      </p>
+    </hgroup>
 
     <div class="recommended-cars">
       <hgroup>
