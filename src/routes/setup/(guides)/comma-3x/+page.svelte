@@ -151,7 +151,6 @@
         </div>
         <div>
           <p>
-            Every comma 3X comes with a comma power.
             Installing the comma power is entirely optional and can be done at any time.
             Simply connect one end to your car's OBD-II port and the other to the harness box.
           </p>
