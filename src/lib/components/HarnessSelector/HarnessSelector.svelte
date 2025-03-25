@@ -65,9 +65,10 @@
     handleInput();
     inputRef?.focus();
 
-     // clear harness selection
-     selection = null;
-     onChange(null);
+    // clear harness selection
+    menuOpen = false;
+    selection = null;
+    onChange(selection);
   }
 
   /* Dropdown Options */
