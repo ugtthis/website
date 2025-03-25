@@ -21,14 +21,16 @@
   export let showVehicleHarnesses = true; // If true, includes the harnesses by each vehicle model
   export let showGenericHarnesses = true; // If true, includes the generic/developer harnesses
 
-  let selection;
+  let selection = null
 
   // Load harnesses based on the options
   $: harnesses = showVehicleHarnesses && showGenericHarnesses ? allHarnesses : showVehicleHarnesses ? vehicleHarnesses : genericHarnesses;
   $: browser && $harnesses.length > 0, setInitialSelection();
-  $: if (selection) {
+  $: {
     onChange(selection);
-    updateQueryParams(selection);
+    if (selection) {
+      updateQueryParams(selection);
+    }
   }
 
   function updateQueryParams(selectedHarness) {
@@ -55,20 +57,19 @@
   let inputValue = "";
   let inputRef;
 
-  const handleInput = () => {
-    return filteredItems = $harnesses.filter(item => item.car.toLowerCase().match(inputValue.toLowerCase()));
-  }
+  $: filteredItems = $harnesses.filter(item => item.car.toLowerCase().match(inputValue.toLowerCase()));
 
   const handleClear = () => {
-    // clear search input
-    inputValue = "";
-    handleInput();
-    inputRef?.focus();
+    // clear search input or close menu
+    if (!inputValue) {
+      menuOpen = false;
+    } else {
+      inputValue = "";
+      inputRef?.focus();
+    }
 
     // clear harness selection
-    menuOpen = false;
     selection = null;
-    onChange(selection);
   }
 
   /* Dropdown Options */
@@ -102,7 +103,6 @@
         class="search-input"
         bind:value={inputValue}
         bind:this={inputRef}
-        on:input={handleInput}
         on:click={() => menuOpen = true}
         on:focus={() => menuOpen = true}
         style={menuOpen ? 'padding: 14px 3rem' : ''}
