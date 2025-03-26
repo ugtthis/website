@@ -28,15 +28,19 @@
   $: browser && $harnesses.length > 0, setInitialSelection();
   $: {
     onChange(selection);
-    if (selection) {
-      updateQueryParams(selection);
-    }
+    updateQueryParams(selection);
   }
 
   function updateQueryParams(selectedHarness) {
     const searchParams = new URLSearchParams();
-    searchParams.set("harness", encodeURIComponent(selectedHarness.car));
-    goto(`?${searchParams.toString()}`, { keepfocus: true, replaceState: true, noScroll: true });
+    if (selectedHarness) {
+      searchParams.set("harness", encodeURIComponent(selectedHarness.car));
+    }
+
+    // https://github.com/sveltejs/kit/discussions/3245#discussioncomment-1931570
+    if (browser) {
+      goto(`?${searchParams.toString()}`, { keepfocus: true, replaceState: true, noScroll: true });
+    }
   }
 
   const setInitialSelection = () => {
