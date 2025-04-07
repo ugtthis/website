@@ -21,12 +21,13 @@
   export let showVehicleHarnesses = true; // If true, includes the harnesses by each vehicle model
   export let showGenericHarnesses = true; // If true, includes the generic/developer harnesses
 
-  let selection = null
+  let selection = undefined
 
   // Load harnesses based on the options
   $: harnesses = showVehicleHarnesses && showGenericHarnesses ? allHarnesses : showVehicleHarnesses ? vehicleHarnesses : genericHarnesses;
   $: if (browser && $harnesses.length > 0) setInitialSelection();
-  $: {
+  $: if (selection !== undefined) {
+    // Don't update w/ initial state
     onChange(selection);
     updateQueryParams(selection);
   }
