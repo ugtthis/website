@@ -17,9 +17,11 @@
   export let onChange;
 
   export let label = "Select vehicle";
+  export let placeholder = "Search for a vehicle or harness";
   export let accessoryLabel = null;
   export let showVehicleHarnesses = true; // If true, includes the harnesses by each vehicle model
   export let showGenericHarnesses = true; // If true, includes the generic/developer harnesses
+  export let hideSupportNoteCard = false;
 
   let selection = undefined
 
@@ -94,7 +96,7 @@
       <button class="clear" on:click={handleClear}>{@html CloseIcon}</button>
       <input
         type="text"
-        placeholder="Search for a vehicle or harness"
+        placeholder={placeholder}
         autocomplete="off"
         class="search-input"
         bind:value={inputValue}
@@ -139,7 +141,7 @@
   </div>
 </div>
 
-{#if selection && selection.package}
+{#if selection && selection.package && !hideSupportNoteCard}
   <NoteCard title="Support" icon={CarIcon}>
     {@html selection.package === 'All' ?
       'openpilot will work with <strong>all packages and trims</strong> of this car.' :

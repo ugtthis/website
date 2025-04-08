@@ -3,6 +3,8 @@
   import Grid from "$lib/components/Grid.svelte";
   import LinkButton from "$lib/components/LinkButton.svelte";
   import Faq from "$lib/components/Faq.svelte";
+  import HarnessSelector from "$lib/components/HarnessSelector/HarnessSelector.svelte";
+  import CheckmarkIcon from "$lib/icons/ui/checkmark.svg?raw";
 
   import { faq } from "$lib/constants/faq.svelte";
 
@@ -22,6 +24,11 @@
   import StepSixImage from "$lib/images/setup/comma-3x/step-6.jpeg";
   import StepSevenImage from "$lib/images/setup/comma-3x/step-7.jpeg";
   import CommaPowerImage from "$lib/images/products/comma-power/comma-power.jpg";
+
+  let selectedVehicle = undefined;
+  const handleHarnessSelection = (value) => {
+    selectedVehicle = value;
+  }
 </script>
 
 <section class="light" id="guide">
@@ -30,6 +37,38 @@
       <div class="header">Setup Diagram:</div>
       <div class="contents">
         <img src={InstallationDiagram} loading="lazy" alt="installation diagram" />
+      </div>
+    </div>
+
+    <div class="card vehicle-notes">
+      <div class="header">Customize Your Guide</div>
+      <div class="contents">
+        <p>Select your vehicle to get customized installation notes for your car:</p>
+        <HarnessSelector
+          label="Select your vehicle"
+          placeholder="Search for your vehicle"
+          onChange={handleHarnessSelection}
+          showGenericHarnesses={false}
+          hideSupportNoteCard={true}
+        />
+
+        {#if selectedVehicle}
+          <div class="setup-notes">
+            {#if selectedVehicle.setupNotes && selectedVehicle.setupNotes.length > 0}
+              <p class="note-heading">Setup Notes:</p>
+              <ul>
+                {#each selectedVehicle.setupNotes as note}
+                  <li>{@html note}</li>
+                {/each}
+              </ul>
+            {:else}
+              <div style="display: flex; align-items: center">
+                <div style="display: flex;">{@html CheckmarkIcon}</div><div style="margin-right: 0.5rem"/>
+                <p>Follow the guide below. There are no specific setup notes for your vehicle.</p>
+              </div>
+            {/if}
+          </div>
+        {/if}
       </div>
     </div>
 
@@ -226,5 +265,43 @@
 
   hr {
     margin: 2rem 0 3rem;
+  }
+
+  .vehicle-notes {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 1rem;
+    }
+
+    & p {
+      margin: 0.25rem 0 0;
+    }
+
+    & .setup-notes {
+      margin: 1rem 0 0.5rem;
+
+      & .note-heading {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      & ul {
+        margin: 0;
+        padding-left: 1.5rem;
+      }
+
+      & li {
+        margin-bottom: 0.5rem;
+        font-size: 1.25rem;
+      }
+
+      & a {
+        color: #000;
+        border-bottom: 2px solid #86ff4e;
+        background-color: rgba(134, 255, 78, 0.15);
+      }
+    }
   }
 </style>
