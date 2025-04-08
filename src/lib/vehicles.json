@@ -132,6 +132,7 @@
       "harness_connector": "GM",
       "detail_sentence": "openpilot upgrades your <strong>Chevrolet Bolt EUV</strong> with automated lane centering <strong>above 6 mph</strong>, and adaptive cruise control <strong>while driving above 3 mph</strong>.",
       "footnotes": [
+        "See more setup details for \u003ca href=\"https://github.com/commaai/openpilot/wiki/gm\"\u003eGM\u003c/a\u003e."
       ]
     },
     {
@@ -145,6 +146,7 @@
       "harness_connector": "GM",
       "detail_sentence": "openpilot upgrades your <strong>Chevrolet Bolt EV</strong> with automated lane centering <strong>above 6 mph</strong>, and adaptive cruise control <strong>while driving above 3 mph</strong>.",
       "footnotes": [
+        "See more setup details for \u003ca href=\"https://github.com/commaai/openpilot/wiki/gm\"\u003eGM\u003c/a\u003e."
       ]
     },
     {
@@ -158,6 +160,7 @@
       "harness_connector": "GM",
       "detail_sentence": "openpilot upgrades your <strong>Chevrolet Equinox</strong> with automated lane centering <strong>above 6 mph</strong>, and adaptive cruise control <strong>while driving above 3 mph</strong>.",
       "footnotes": [
+        "See more setup details for \u003ca href=\"https://github.com/commaai/openpilot/wiki/gm\"\u003eGM\u003c/a\u003e."
       ]
     },
     {
@@ -171,6 +174,7 @@
       "harness_connector": "GM",
       "detail_sentence": "openpilot upgrades your <strong>Chevrolet Silverado 1500</strong> with automated lane centering <strong>above 6 mph</strong>, and adaptive cruise control.",
       "footnotes": [
+        "See more setup details for \u003ca href=\"https://github.com/commaai/openpilot/wiki/gm\"\u003eGM\u003c/a\u003e."
       ]
     },
     {
@@ -184,6 +188,7 @@
       "harness_connector": "GM",
       "detail_sentence": "openpilot upgrades your <strong>Chevrolet Trailblazer</strong> with automated lane centering <strong>above 6 mph</strong>, and adaptive cruise control <strong>while driving above 3 mph</strong>.",
       "footnotes": [
+        "See more setup details for \u003ca href=\"https://github.com/commaai/openpilot/wiki/gm\"\u003eGM\u003c/a\u003e."
       ]
     }
   ],
@@ -754,6 +759,7 @@
       "harness_connector": "GM",
       "detail_sentence": "openpilot upgrades your <strong>GMC Sierra 1500</strong> with automated lane centering <strong>above 6 mph</strong>, and adaptive cruise control.",
       "footnotes": [
+        "See more setup details for \u003ca href=\"https://github.com/commaai/openpilot/wiki/gm\"\u003eGM\u003c/a\u003e."
       ]
     }
   ],
@@ -994,10 +1000,10 @@
       ]
     },
     {
-      "name": "Honda Passport 2019-23",
+      "name": "Honda Passport 2019-25",
       "model": "Passport",
-      "years": "2019-23",
-      "year_list": "2019, 2020, 2021, 2022, 2023",
+      "years": "2019-25",
+      "year_list": "2019, 2020, 2021, 2022, 2023, 2024, 2025",
       "package": "All",
       "angled_mount": false,
       "video_link": "",
@@ -1862,10 +1868,10 @@
       ]
     },
     {
-      "name": "Kia Niro EV 2023",
+      "name": "Kia Niro EV 2023-24",
       "model": "Niro EV",
-      "years": "2023",
-      "year_list": "2023",
+      "years": "2023-24",
+      "year_list": "2023, 2024",
       "package": "All",
       "angled_mount": false,
       "video_link": "",
@@ -2548,6 +2554,7 @@
       "harness_connector": "Nissan B",
       "detail_sentence": "openpilot upgrades your <strong>Nissan Altima</strong> with automated lane centering <strong>at all speeds</strong>, and adaptive cruise control.",
       "footnotes": [
+        "See more setup details for \u003ca href=\"https://github.com/commaai/openpilot/wiki/nissan\"\u003eNissan\u003c/a\u003e."
       ]
     },
     {
@@ -2561,6 +2568,7 @@
       "harness_connector": "Nissan A",
       "detail_sentence": "openpilot upgrades your <strong>Nissan Leaf</strong> with automated lane centering <strong>at all speeds</strong>, and adaptive cruise control.",
       "footnotes": [
+        "See more setup details for \u003ca href=\"https://github.com/commaai/openpilot/wiki/nissan\"\u003eNissan\u003c/a\u003e."
       ]
     },
     {
@@ -2574,6 +2582,7 @@
       "harness_connector": "Nissan A",
       "detail_sentence": "openpilot upgrades your <strong>Nissan Rogue</strong> with automated lane centering <strong>at all speeds</strong>, and adaptive cruise control.",
       "footnotes": [
+        "See more setup details for \u003ca href=\"https://github.com/commaai/openpilot/wiki/nissan\"\u003eNissan\u003c/a\u003e."
       ]
     },
     {
@@ -2587,6 +2596,7 @@
       "harness_connector": "Nissan A",
       "detail_sentence": "openpilot upgrades your <strong>Nissan X-Trail</strong> with automated lane centering <strong>at all speeds</strong>, and adaptive cruise control.",
       "footnotes": [
+        "See more setup details for \u003ca href=\"https://github.com/commaai/openpilot/wiki/nissan\"\u003eNissan\u003c/a\u003e."
       ]
     }
   ],
@@ -2959,10 +2969,10 @@
       ]
     },
     {
-      "name": "Tesla Model 3 (with HW4) 2024",
+      "name": "Tesla Model 3 (with HW4) 2024-25",
       "model": "Model 3 (with HW4)",
-      "years": "2024",
-      "year_list": "2024",
+      "years": "2024-25",
+      "year_list": "2024, 2025",
       "package": "All",
       "angled_mount": false,
       "video_link": "",
@@ -3512,10 +3522,10 @@
       ]
     },
     {
-      "name": "Toyota RAV4 2023-24",
+      "name": "Toyota RAV4 2023-25",
       "model": "RAV4",
-      "years": "2023-24",
-      "year_list": "2023, 2024",
+      "years": "2023-25",
+      "year_list": "2023, 2024, 2025",
       "package": "All",
       "angled_mount": false,
       "video_link": "",
