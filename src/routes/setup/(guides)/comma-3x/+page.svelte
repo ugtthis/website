@@ -29,6 +29,16 @@
   const handleHarnessSelection = (value) => {
     selectedVehicle = value;
   }
+
+  function getVideoEmbedSrc(videoLink) {
+    const url = new URL(videoLink);
+    if (url.hostname !== "youtu.be" && url.hostname !== "www.youtube.com") {
+      console.warn("Video not supported", videoLink);
+      return null;
+    }
+    const videoId = url.searchParams.get("v") || url.pathname.slice(1);
+    return `https://www.youtube.com/embed/${videoId}?rel=0&controls=1&autoplay=0&mute=0`;
+  }
 </script>
 
 <section class="light" id="guide">
@@ -43,7 +53,7 @@
     <div class="card vehicle-notes">
       <div class="header">Customize Your Guide</div>
       <div class="contents">
-        <p>Select your vehicle to get customized installation notes for your car:</p>
+        <p>Select your vehicle to get customized installation notes:</p>
         <HarnessSelector
           label="Select your vehicle"
           placeholder="Search for your vehicle"
@@ -54,19 +64,38 @@
 
         {#if selectedVehicle}
           <div class="setup-notes">
-            {#if selectedVehicle.setupNotes && selectedVehicle.setupNotes.length > 0}
-              <p class="note-heading">Setup Notes:</p>
-              <ul>
-                {#each selectedVehicle.setupNotes as note}
-                  <li>{@html note}</li>
-                {/each}
-              </ul>
-            {:else}
-              <div style="display: flex; align-items: center">
-                <div style="display: flex;">{@html CheckmarkIcon}</div><div style="margin-right: 0.5rem"/>
-                <p>Follow the guide below. There are no specific setup notes for your vehicle.</p>
-              </div>
-            {/if}
+            <Grid templateColumns="1.25fr 0.75fr">
+              {#if selectedVehicle.setupVideo}
+                <div>
+                  <p class="note-heading">Setup Video:</p>
+                  <div class="media-container">
+                    <iframe
+                      src={getVideoEmbedSrc(selectedVehicle.setupVideo)}
+                      frameborder="0"
+                      allow="autoplay; encrypted-media"
+                      title={`${selectedVehicle.car} setup guide`}
+                    ></iframe>
+                  </div>
+                </div>
+              {/if}
+              {#if selectedVehicle.setupNotes.length > 0}
+                <div>
+                  <p class="note-heading">Setup Notes:</p>
+                  <ul>
+                    {#each selectedVehicle.setupNotes as note}
+                      <li>{@html note}</li>
+                    {/each}
+                  </ul>
+                </div>
+              {/if}
+              {#if (selectedVehicle.setupNotes.length === 0) && !selectedVehicle.setupVideo}
+                <div style="display: flex; align-items: center">
+                  <div style="display: flex;">{@html CheckmarkIcon}</div>
+                  <div style="margin-right: 0.5rem"/>
+                  <p>Follow the guide below. There are no specific setup notes for your vehicle.</p>
+                </div>
+              {/if}
+            </Grid>
           </div>
         {/if}
       </div>
@@ -271,15 +300,12 @@
     margin-top: 1rem;
     font-size: 1.25rem;
 
-    @media screen and (max-width: 1024px) {
-      font-size: 1rem;
-    }
-
     & p {
       margin: 0.25rem 0 0;
     }
 
     & .setup-notes {
+      width: 100%;
       margin: 1rem 0 0.5rem;
 
       & .note-heading {
@@ -301,6 +327,19 @@
         color: #000;
         border-bottom: 2px solid #86ff4e;
         background-color: rgba(134, 255, 78, 0.15);
+      }
+
+      & .media-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+
+        & iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
       }
     }
   }
