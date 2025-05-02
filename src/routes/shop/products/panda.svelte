@@ -3,7 +3,6 @@
   import NoteCard from "$lib/components/NoteCard.svelte";
 
   import RedPandaImage from "$lib/images/products/panda/red-panda.jpg";
-  import BlackPandaImage from "$lib/images/products/panda/black-panda.jpeg";
   import WhitePandaImage from "$lib/images/products/panda/white-panda.jpeg";
 
   export const productInfo = {
@@ -11,8 +10,8 @@
     id: "gid://shopify/Product/10933316813",
     route: "/shop/panda",
     category: "accessories",
-    price: "from $149",
-    images: [RedPandaImage, BlackPandaImage, WhitePandaImage],
+    price: "from $99",
+    images: [RedPandaImage, WhitePandaImage],
   };
 </script>
 
@@ -77,32 +76,6 @@
         The red panda does not have GPS support. It is not compatible with the
         comma two.
       </p>
-    </div>
-    <hr />
-    <div>
-      <hgroup>
-        <img src={BlackPandaImage} loading="lazy" alt="black panda" />
-        <div>
-          <span>variant • deprecated from openpilot</span>
-          <strong>black panda</strong>
-        </div>
-      </hgroup>
-      <p>
-        The black panda connects to an EON Gold with <a
-          href="/shop/car-harness">car harness</a
-        >. It can also be used with a computer and
-        <a
-          href="https://github.com/commaai/openpilot/tree/master/tools/cabana"
-          target="_blank">cabana</a
-        >.
-      </p>
-      <ul>
-        <li>4th CAN bus to connect to the OBD-II port</li>
-        <li>OBD-C to connect to car harness</li>
-        <li>USB A to connect to EON</li>
-        <li>Mounts on the windshield</li>
-        <li>High-definition GPS</li>
-      </ul>
     </div>
     <hr />
     <div>
