@@ -24,14 +24,14 @@
 <Product {product}>
   <div slot="notes">
     <NoteCard title="Note">
-      If you are already using a car harness, you only need to purchase this product. Do not return your car harness. comma two, comma three,and comma 3X use the same harness.
+      If you are already using a car harness, you only need to purchase this product. Do not return your car harness or other accessories. comma two, comma three, and comma 3X use the same harness.
     </NoteCard>
   </div>
 
   <div slot="description">
     <strong>Description</strong>
     <p>
-      Trade in any older comma device (EON, comma two, comma three) for a brand new comma 3X. Device can be in any condition as long as you are the original purchaser.
+      Trade in any older comma device (EON, comma two, or comma three) for a brand new comma 3X. Device can be in any condition as long as you are the original purchaser.
     </p>
 
     <hr>
