@@ -633,7 +633,7 @@
         }, {
           question: 'Do you offer any upgrades or trade-in discounts for the comma two or three?',
           answer: `
-            comma three -> 3X trade-in details can be <a href="/shop/comma-3x-trade-in">found here</a>.
+            Trade-in details can be <a href="/shop/comma-3x-trade-in">found here</a>.
           `
         }, {
           question: 'What do I need to know before making an international order?',
@@ -747,9 +747,6 @@
             <p>
               International shipping is flat rate and costs $30. Note that international shipping times can vary widely, so please be patient.
             </p>
-            <p>
-              Please see other FAQ questions for more information about shipping domestically and internationally.
-            </p>
           `
         }, {
           question: 'What do I do if my device arrives damaged?',
@@ -769,7 +766,7 @@
         }, {
           question: 'Do you offer a warranty?',
           answer: `
-            We offer a 1-year limited warranty against hardware defects. Our policy is to verify hardware issues over email before making a billable repair. If you believe your hardware is defective, please fill out a support request on the <a href="https://comma.ai/support">comma.ai/support</a>. We cannot provide shipping return labels for international devices with warranty issues.
+            We offer a 1-year limited warranty against hardware defects. If you believe your hardware is defective, please fill out a support request at <a href="https://comma.ai/support">comma.ai/support</a>. We cannot provide shipping return labels for international devices with warranty issues.
           `
         }, {
           question: 'What is the return policy?',
@@ -883,12 +880,12 @@
             </p>
           `
         }, {
-          question: 'My 3X device is having issues. What should I do?',
+          question: 'My comma 3X is having issues. What should I do?',
           answer: `
-            We recommend first trying to reflash your device at <a href="https://flash.comma.ai">flash.comma.ai</a> and to reseat all the cable connections. comma support is only able to look into issues on stock with a route where the issue occurs. If you are running a fork, we are unable to diagnose defective hardware without a route on stock. Once you have a route, please open a ticket at <a href="https://comma.ai/support">comma.ai/support</a>. Pictures, videos, and uploading logs via wi-fi are very helpful and often expedite the resolution process. Please also include any troubleshooting steps you have already taken. We also recommend reviewing the community <a href="https://github.com/commaai/openpilot/wiki">GitHub wiki</a> and <a href="https://discord.comma.ai">discord.comma.ai</a> for other troubleshooting. Issues that require engineering are reviewed as soon as they can be, but it is not uncommon to get a response in ~7-10 business days.
+            We recommend first trying to reflash your device at <a href="https://flash.comma.ai">flash.comma.ai</a> and to reseat all the cable connections. comma support is only able to look into issues on stock with a route where the issue occurs. If you are running a fork, we are unable to diagnose defective hardware without a route on stock. Once you have a route, please open a ticket at <a href="https://comma.ai/support">comma.ai/support</a>. Pictures, videos, and uploading logs via wi-fi are very helpful and often expedite the resolution process. Please also include any troubleshooting steps you have already taken. We also recommend reviewing the community <a href="https://github.com/commaai/openpilot/wiki">GitHub wiki</a> and <a href="https://discord.comma.ai">discord.comma.ai</a> for other troubleshooting.
           `
         }, {
-          question: 'My comma three device is having issues. What should I do?',
+          question: 'My comma three is having issues. What should I do?',
           answer: `
             <p>
               comma three has supercapacitors. When unplugged, allow them to fully drain for 30 seconds before plugging the device back in.
@@ -897,14 +894,15 @@
               Still nothing? <a href="https://flash.comma.ai">Reflash AGNOS</a>.
             </p>
             <p>
-              If your device is out of warranty, we provide a flat rate repair option of $500 for most issues. Please visit <a href="https://comma.ai/support">comma.ai/support</a> for next steps.
+            While we are no longer able to repair comma three, we offer a <a href="/shop/comma-3x-trade-in">trade-in for the comma 3X</a>.
             </p>
           `
         }, {
           question: 'My comma two/EON is having issues?',
           answer: `
-            We recommend checking out the <a href="https://discord.comma.ai">discord.comma.ai</a> for DIY repair options. comma is not responsible for any modifications you make to your device. We no longer provide hardware warranty support for these devices.
-          `
+            While we are no longer able to repair EON and comma two, we offer a <a href="/shop/comma-3x-trade-in">trade-in for the comma 3X</a>.
+
+            Otherwise, we recommend checking out the <a href="https://discord.comma.ai">discord.comma.ai</a> for DIY repair options.          `
         }, {
           question: 'My J533/Hyundai/Kia harness does not fit?',
           answer: `
@@ -929,16 +927,6 @@
       image: OtherTopicsImage,
       questions: [
         {
-          question: 'Can I buy a comma two or comma three?',
-          answer: `
-            <p>
-              The comma two and comma three are no longer offered for sale, and have been removed from the shop. The comma 3X is our latest hardware offering and can be purchased <a href="https://comma.ai/shop/comma-3x">here</a>.
-            </p>
-            <p>
-              Customers with a comma three continue to be covered under our 1 year warranty policy.
-            </p>
-          `
-        }, {
           question: 'How can I invest in comma?',
           answer: `
             comma is a private company and we are not seeking outside investment at this time.
@@ -957,16 +945,6 @@
             </p>
             <p>
               Car companies: <a href="https://blog.comma.ai/working-with-comma-a-guide-for-car-companies/">How to work with us?</a>
-            </p>
-          `
-        }, {
-          question: 'How do I contact support?',
-          answer: `
-            <p>
-              comma support can be reached by opening a ticket via <a href="https://comma.ai/support">comma.ai/support</a>. Our support email inbox is not monitored. The only way to contact support at this time is via this form. We do not offer phone support at this time.
-            </p>
-            <p>
-              All hardware warranty claims are first diagnosed via email support and then repaired at our manufacturing facility. Please keep in mind that many things that seem like comma 3X hardware issues are often actually software related.
             </p>
           `
         }, {
