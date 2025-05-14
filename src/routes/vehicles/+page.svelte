@@ -116,8 +116,8 @@
                   <div class="year">{car_info.year_list}</div>
                 </div>
                 <div class="video-icon-wrapper">
-                  {#if car_info.video_link !== ""}
-                    <a href={car_info.video_link} target="_blank">{@html YoutubeIcon}</a>
+                  {#if car_info.video !== ""}
+                    <a href={car_info.video} target="_blank">{@html YoutubeIcon}</a>
                   {/if}
                 </div>
               </div>
