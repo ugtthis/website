@@ -10,4 +10,4 @@ export const THREEX_AFFIRM_PRICE = 91;  // $/month
 
 export const CAR_HARNESS_SALE = false;
 export const CAR_HARNESS_STRIKETHROUGH_PRICE = null;
-export const CAR_HARNESS_PRICE = '+$99';
+export const CAR_HARNESS_PRICE = '99';

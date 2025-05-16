@@ -109,7 +109,7 @@
         {/if}
         <div style="width: 0.75rem;"/>
         <div class:sale-price={CAR_HARNESS_SALE}>
-          {CAR_HARNESS_PRICE}
+          +${CAR_HARNESS_PRICE}
         </div>
       </div>
     </HarnessSelector>
