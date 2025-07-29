@@ -8,19 +8,15 @@
 
   import DeviceImage from "$lib/images/device.png";
   import BodyImage from "$lib/images/comma-body.png";
-  import CircuitImage from "$lib/images/circuit.png";
 
   import RecordingsIcon from "$lib/icons/features/recordings.svg?raw";
   import CalendarIcon from "$lib/icons/features/calendar.svg?raw";
   import CurrencyIcon from "$lib/icons/features/currency.svg?raw";
-  import ArrowRightIcon from "$lib/icons/arrow-right.svg?raw";
   import BusinessIcon from "$lib/icons/features/business.svg?raw";
   import ContactIcon from "$lib/icons/features/contact.svg?raw";
   import ImmediateIcon from "$lib/icons/features/immediate.svg?raw";
   import AdaptiveCruiseIcon from "$lib/icons/features/adaptive-cruise.svg?raw";
   import LaneCenteringIcon from "$lib/icons/features/lane-centering.svg?raw";
-
-  import InfoIcon from "$lib/icons/ui/info.svg?raw";
 
   import { THREEX_PRICE, THREEX_AFFIRM_PRICE, THREEX_SALE, THREEX_STRIKETHROUGH_PRICE } from '$lib/constants/prices.js';
   import { vehicleCountText } from '$lib/constants/vehicles.js';
