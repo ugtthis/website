@@ -31,6 +31,14 @@
   <div class="container">
     <article>
       <div class="product-display gradient-bg">
+        <div class="aurora"></div>
+        <div class="starfield"></div>
+        <div class="floating-particles-large"></div>
+        <div class="floating-particles-medium"></div>
+        <div class="floating-particles-small"></div>
+        <div class="dark-overlay"></div>
+        <div class="matrix-rain"></div>
+        <div class="scan-line"></div>
         <Grid columns={2} alignItems="center" size="large">
           <div class="product-content">
             <Badge style="accent">New low price!</Badge>
@@ -340,7 +348,313 @@
     }
 
     & .gradient-bg {
-      background: linear-gradient(135deg, #111 50%, #023807);
+      --overlay-darkness: 0.6; /* Tweak this value: 0 = no overlay, 1 = full black */
+      
+      position: relative;
+      background: 
+        /* Deep matrix portal depth */
+        radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 15%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.8) 70%),
+        /* Matrix green energy zones with depth */
+        radial-gradient(circle at 20% 80%, rgba(0, 255, 0, 0.3) 0%, rgba(0, 255, 0, 0.1) 30%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 255, 127, 0.25) 0%, rgba(0, 255, 127, 0.08) 35%, transparent 55%),
+        radial-gradient(ellipse at 50% 50%, rgba(0, 255, 0, 0.15) 0%, rgba(0, 255, 0, 0.05) 40%, transparent 70%),
+        /* Subtle orange accent pops */
+        radial-gradient(circle at 70% 30%, rgba(255, 140, 0, 0.12) 0%, transparent 25%),
+        radial-gradient(circle at 30% 70%, rgba(255, 165, 0, 0.08) 0%, transparent 30%),
+        /* Additional depth layers */
+        radial-gradient(circle at 40% 20%, rgba(0, 255, 0, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 60% 80%, rgba(0, 255, 127, 0.08) 0%, transparent 35%),
+        /* Deep matrix background */
+        linear-gradient(135deg, #000000 0%, #001100 25%, #000a00 50%, #001100 75%, #000000 100%);
+      overflow: hidden;
+      box-shadow: 
+        inset 0 0 300px rgba(0, 0, 0, 0.9),
+        inset 0 0 150px rgba(0, 255, 0, 0.15),
+        inset 0 0 80px rgba(255, 140, 0, 0.08),
+        inset 0 0 40px rgba(0, 255, 127, 0.1);
+      
+      /* Subtle matrix aurora effect */
+      & > .aurora {
+        position: absolute;
+        inset: 0;
+        background: 
+          linear-gradient(35deg, 
+            transparent 20%, 
+            rgba(0, 255, 0, 0.08) 30%, 
+            rgba(0, 255, 127, 0.12) 45%, 
+            rgba(255, 140, 0, 0.06) 55%, 
+            rgba(0, 255, 0, 0.08) 70%, 
+            transparent 80%
+          );
+        filter: blur(60px);
+        transform: skewY(-3deg) scale(2);
+        animation: aurora 40s ease-in-out infinite alternate;
+        pointer-events: none;
+        opacity: 0.6;
+      }
+      
+      @keyframes aurora {
+        0% { transform: skewY(-5deg) scale(1.5) translateX(-10%); }
+        100% { transform: skewY(5deg) scale(1.5) translateX(10%); }
+      }
+      
+      /* Subtle matrix starfield */
+      & > .starfield {
+        position: absolute;
+        inset: 0;
+        background-image: 
+          radial-gradient(1px 1px at 20px 30px, rgba(255, 255, 255, 0.6), transparent),
+          radial-gradient(1px 1px at 40px 70px, rgba(255, 255, 255, 0.4), transparent),
+          radial-gradient(0.5px 0.5px at 50px 160px, rgba(255, 255, 255, 0.5), transparent),
+          radial-gradient(1px 1px at 130px 40px, rgba(255, 255, 255, 0.3), transparent),
+          radial-gradient(1px 1px at 80px 120px, rgba(0, 255, 0, 0.4), transparent),
+          radial-gradient(0.5px 0.5px at 110px 90px, rgba(255, 255, 255, 0.4), transparent),
+          radial-gradient(0.5px 0.5px at 160px 20px, rgba(255, 255, 255, 0.3), transparent),
+          radial-gradient(1px 1px at 180px 140px, rgba(255, 140, 0, 0.3), transparent),
+          radial-gradient(0.5px 0.5px at 90px 180px, rgba(0, 255, 127, 0.3), transparent);
+        background-size: 200px 200px;
+        animation: sparkle 60s linear infinite;
+        pointer-events: none;
+        opacity: 0.7;
+      }
+      
+      @keyframes sparkle {
+        0% { opacity: 0.5; transform: rotate(0deg) scale(1); }
+        50% { opacity: 1; }
+        100% { opacity: 0.5; transform: rotate(360deg) scale(1); }
+      }
+      
+      /* Large floating circle particles */
+      & > .floating-particles-large {
+        position: absolute;
+        inset: 0;
+        background-image:
+          /* Large matrix green circles */
+          radial-gradient(circle at 25% 120%, rgba(0, 255, 0, 0.6) 0%, rgba(0, 255, 0, 0.3) 20%, rgba(0, 255, 0, 0.1) 40%, transparent 50%),
+          radial-gradient(circle at 65% 115%, rgba(0, 255, 127, 0.5) 0%, rgba(0, 255, 127, 0.25) 25%, rgba(0, 255, 127, 0.08) 45%, transparent 55%),
+          radial-gradient(circle at 85% 125%, rgba(0, 255, 0, 0.4) 0%, rgba(0, 255, 0, 0.2) 30%, rgba(0, 255, 0, 0.06) 50%, transparent 60%),
+          /* Subtle orange accent circles */
+          radial-gradient(circle at 45% 130%, rgba(255, 140, 0, 0.3) 0%, rgba(255, 140, 0, 0.15) 25%, rgba(255, 140, 0, 0.05) 45%, transparent 55%);
+        background-size: 100% 100%;
+        filter: blur(8px);
+        animation: floatLarge 35s linear infinite;
+        pointer-events: none;
+        z-index: 1;
+      }
+      
+      @keyframes floatLarge {
+        0% { 
+          opacity: 0;
+        }
+        15% { opacity: 1; }
+        85% { opacity: 1; }
+        100% { 
+          opacity: 0;
+        }
+      }
+      
+      /* Medium floating circle particles */
+      & > .floating-particles-medium {
+        position: absolute;
+        inset: 0;
+        background-image:
+          /* Medium matrix green circles */
+          radial-gradient(circle at 20% 125%, rgba(0, 255, 0, 0.7) 0%, rgba(0, 255, 0, 0.4) 15%, rgba(0, 255, 0, 0.1) 35%, transparent 45%),
+          radial-gradient(circle at 40% 120%, rgba(0, 255, 127, 0.6) 0%, rgba(0, 255, 127, 0.3) 20%, rgba(0, 255, 127, 0.08) 40%, transparent 50%),
+          radial-gradient(circle at 60% 135%, rgba(0, 255, 0, 0.5) 0%, rgba(0, 255, 0, 0.25) 25%, rgba(0, 255, 0, 0.06) 45%, transparent 55%),
+          radial-gradient(circle at 80% 115%, rgba(0, 255, 127, 0.6) 0%, rgba(0, 255, 127, 0.3) 18%, rgba(0, 255, 127, 0.08) 38%, transparent 48%),
+          /* Occasional orange accent */
+          radial-gradient(circle at 70% 128%, rgba(255, 140, 0, 0.4) 0%, rgba(255, 140, 0, 0.2) 20%, rgba(255, 140, 0, 0.05) 40%, transparent 50%);
+        background-size: 100% 100%;
+        filter: blur(4px);
+        animation: floatMedium 25s linear infinite;
+        animation-delay: 8s;
+        pointer-events: none;
+        z-index: 1;
+      }
+      
+      @keyframes floatMedium {
+        0% { 
+          transform: perspective(800px) translateZ(-100px) translateY(0) translateX(0) scale(0.5);
+          opacity: 0;
+        }
+        12% { opacity: 1; }
+        88% { opacity: 1; }
+        100% { 
+          opacity: 0;
+        }
+      }
+      
+      /* Small floating circle particles */
+      & > .floating-particles-small {
+        position: absolute;
+        inset: 0;
+        background-image:
+          /* Small matrix green circles */
+          radial-gradient(circle at 15% 118%, rgba(0, 255, 0, 0.8) 0%, rgba(0, 255, 0, 0.5) 10%, rgba(0, 255, 0, 0.15) 25%, transparent 35%),
+          radial-gradient(circle at 35% 125%, rgba(0, 255, 127, 0.7) 0%, rgba(0, 255, 127, 0.4) 12%, rgba(0, 255, 127, 0.12) 28%, transparent 38%),
+          radial-gradient(circle at 55% 132%, rgba(0, 255, 0, 0.6) 0%, rgba(0, 255, 0, 0.35) 15%, rgba(0, 255, 0, 0.1) 30%, transparent 40%),
+          radial-gradient(circle at 75% 120%, rgba(0, 255, 127, 0.7) 0%, rgba(0, 255, 127, 0.4) 10%, rgba(0, 255, 127, 0.12) 25%, transparent 35%),
+          radial-gradient(circle at 95% 115%, rgba(0, 255, 0, 0.5) 0%, rgba(0, 255, 0, 0.3) 15%, rgba(0, 255, 0, 0.08) 30%, transparent 40%),
+          radial-gradient(circle at 45% 140%, rgba(0, 255, 127, 0.6) 0%, rgba(0, 255, 127, 0.35) 12%, rgba(0, 255, 127, 0.1) 28%, transparent 38%),
+          /* Rare small orange accent */
+          radial-gradient(circle at 65% 127%, rgba(255, 140, 0, 0.4) 0%, rgba(255, 140, 0, 0.2) 15%, rgba(255, 140, 0, 0.05) 30%, transparent 40%);
+        background-size: 100% 100%;
+        filter: blur(2px);
+        animation: floatSmall 18s linear infinite;
+        animation-delay: 15s;
+        pointer-events: none;
+        z-index: 2;
+      }
+      
+      @keyframes floatSmall {
+        0% { 
+          opacity: 0;
+        }
+        8% { opacity: 1; }
+        92% { opacity: 1; }
+        100% { 
+          opacity: 0;
+        }
+      }
+      
+      /* Grain effect using pseudo-element */
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: 
+          repeating-conic-gradient(
+            from 0deg at 50% 50%,
+            rgba(0, 255, 0, 0.08) 0deg,
+            transparent 1deg,
+            transparent 2deg,
+            rgba(255, 140, 0, 0.08) 3deg,
+            transparent 4deg,
+            transparent 5deg,
+            rgba(0, 255, 127, 0.07) 6deg
+          );
+        opacity: 1;
+        mix-blend-mode: screen;
+        pointer-events: none;
+        animation: grain 15s infinite linear;
+      }
+      
+      @keyframes grain {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        25% { transform: translate(-5%, 5%) scale(1.05); }
+        50% { transform: translate(5%, -5%) scale(0.95); }
+        75% { transform: translate(-5%, -5%) scale(1.02); }
+      }
+      
+      /* Grainy noise texture */
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.5;
+        mix-blend-mode: screen;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.95' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+        pointer-events: none;
+      }
+      
+      /* Dark overlay for easy brightness control */
+      & > .dark-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, var(--overlay-darkness));
+        pointer-events: none;
+        z-index: 1;
+      }
+      
+      /* Matrix rain effect */
+      & > .matrix-rain {
+        position: absolute;
+        inset: 0;
+        background-image: 
+          repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 18px,
+            rgba(0, 255, 0, 0.04) 18px,
+            rgba(0, 255, 0, 0.04) 19px,
+            transparent 19px,
+            transparent 36px,
+            rgba(255, 140, 0, 0.02) 36px,
+            rgba(255, 140, 0, 0.02) 37px,
+            transparent 37px,
+            transparent 54px,
+            rgba(0, 255, 127, 0.03) 54px,
+            rgba(0, 255, 127, 0.03) 55px,
+            transparent 55px,
+            transparent 72px,
+            rgba(255, 165, 0, 0.015) 72px,
+            rgba(255, 165, 0, 0.015) 73px,
+            transparent 73px,
+            transparent 90px
+          );
+        animation: matrixRain 30s linear infinite;
+        pointer-events: none;
+        z-index: 1;
+      }
+      
+      @keyframes matrixRain {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(100px); }
+      }
+      
+      /* Ensure content stays above pseudo-elements */
+      & > * {
+        position: relative;
+        z-index: 2;
+      }
+      
+      /* Animated scan line for extra retro effect */
+      & > .scan-line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, 
+          transparent 0%, 
+          rgba(255, 140, 0, 0.7) 10%,
+          rgba(0, 255, 0, 0.9) 25%,
+          rgba(0, 255, 127, 0.9) 40%,
+          rgba(255, 165, 0, 0.8) 50%,
+          rgba(0, 255, 127, 0.9) 60%,
+          rgba(0, 255, 0, 0.9) 75%,
+          rgba(255, 94, 77, 0.6) 90%,
+          transparent 100%
+        );
+        filter: blur(1px);
+        opacity: 0.8;
+        animation: scan 10s linear infinite;
+        pointer-events: none;
+        mix-blend-mode: screen;
+        z-index: 2;
+      }
+    }
+    
+    @keyframes scan {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(100vh); }
+    }
+    
+    /* Subtle flicker animation for space effect */
+    & .gradient-bg {
+      animation: spaceFlicker 45s infinite;
+    }
+    
+    @keyframes spaceFlicker {
+      0%, 100% { filter: brightness(1) saturate(1); }
+      25% { filter: brightness(1.05) saturate(1.1); }
+      50% { filter: brightness(0.98) saturate(1); }
+      75% { filter: brightness(1.02) saturate(1.05); }
+      92% { filter: brightness(1); }
+      92.5% { filter: brightness(1.08) hue-rotate(10deg); }
+      93% { filter: brightness(0.97); }
+      93.5% { filter: brightness(1); }
     }
 
     & .product-display {
