@@ -34,8 +34,8 @@ export async function load({ url }) {
     }
   } catch (e) {
     console.error(`Failed to load product ${productId}:`, e);
-    throw error(response.status, {
-      message: `Product ${productId} not found`,
+    throw error(404, {
+      message: `Product "${productId}" not found`,
     })
   }
 }
