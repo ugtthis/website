@@ -340,15 +340,9 @@
     }
 
     & .flowers-in-space-bg {
-      --dark-overlay-opacity: 0.35;
-      background: 
-        linear-gradient(
-          rgba(0, 0, 0, var(--dark-overlay-opacity)), 
-          rgba(0, 0, 0, var(--dark-overlay-opacity))
-        ),
-        url("$lib/images/device-backdrop.jpg");
-      background-size: auto, cover;
-      background-position: center;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+        url("$lib/images/device-backdrop.jpg") center / cover;
     }
 
     & .product-display {
