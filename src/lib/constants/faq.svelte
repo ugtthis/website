@@ -382,7 +382,7 @@
           question: 'Does installing a comma device require permanent modifications to the car?',
           answer: `
             Installing a comma device does not require any permanent modifications to
-            your car. Removing the 
+            your car. Removing the comma device leaves your car in the same state as before the installation.
           `
         }, {
           question: 'How do I mount my comma device?',
@@ -537,12 +537,6 @@
           question: 'I would like to match a price change.',
           answer: `
             We do not offer price matching. Returns can be made at <a href="https://comma.ai/returns">comma.ai/returns</a> within 30 days of receiving the order.
-          `
-        }, {
-          question: 'Do you sell parts?',
-          answer: `
-            We do our best to offer replacement parts for your comma two, three,
-            and 3X. Please check out our shop for our current offering.
           `
         }, {
           question: 'Is the 1-year hardware warranty transferable?',
