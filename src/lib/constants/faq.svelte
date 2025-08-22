@@ -763,7 +763,7 @@
       ]
     },
     troubleshooting: {
-      title: 'Hardware Troubleshooting & Failures',
+      title: 'Hardware Troubleshooting',
       image: CommaThreeImage,
       questions: [
         {
