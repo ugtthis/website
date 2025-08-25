@@ -2,7 +2,6 @@
   import SetupGuide from "$lib/components/SetupGuide.svelte";
 
   import Comma3XImage from "$lib/images/device.png";
-  import CommaBodyImage from "$lib/images/comma-body.png";
 </script>
 
 <section class="light" id="installation">
@@ -15,15 +14,6 @@
       estimatedMinutes={15}
       link="/setup/comma-3x"
       image={Comma3XImage}
-    />
-    <hr />
-    <SetupGuide
-      productName="comma body"
-      title="Assembly Instructions"
-      stepCount={8}
-      estimatedMinutes={40}
-      link="/setup/comma-body"
-      image={CommaBodyImage}
     />
   </div>
 </section>
