@@ -8,6 +8,15 @@
 </a>
 
 <style>
+  @keyframes shimmer {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
   .banner {
     display: block;
     text-decoration: none;
@@ -16,7 +25,7 @@
   }
 
   .wrapper {
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     margin-left: auto;
     margin-right: auto;
     width: 85%;
@@ -38,6 +47,17 @@
   }
 
   .headline {
-    font-size: 1.25rem;
+    font-size: 1.75rem;
+    background: linear-gradient(
+      90deg,
+      black 30%,
+      #666 50%,
+      black 70%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 4s linear infinite;
   }
 </style>
