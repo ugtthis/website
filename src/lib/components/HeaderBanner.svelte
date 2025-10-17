@@ -39,14 +39,9 @@
   .top-border,
   .bottom-border {
     height: 8px;
-    background: linear-gradient(
-      90deg,
-      #001a05 0%,
-      #004d0a 25%,
-      #00b925 50%,
-      #004d0a 75%,
-      #001a05 100%
-    );
+    background:
+      linear-gradient(90deg, transparent, #00b925, #002a08, transparent),
+      radial-gradient(ellipse at center, #2d4a35 20%, #1e3a28 35%, #0a0f0e 80%);
     background-size: 200% 100%;
     animation: borderShine 35s linear infinite;
   }
