@@ -72,14 +72,14 @@
     font-size: 1.75rem;
     background: linear-gradient(
       90deg,
-      #c1c1c1 0%,
-      #00ff41 50%,
-      #c1c1c1 100%
+      #1e921a 0%,
+      #00ff41 20%,
+      #1e921a 100%
     );
     background-size: 200% auto;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shimmer 23s linear infinite;
+    animation: shimmer 25s linear infinite;
   }
 </style>
