@@ -65,6 +65,7 @@
       additionalProductIds = [];
       backordered = null;
     }
+    backordered = '4-12 weeks';
   }
 </script>
 
