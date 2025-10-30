@@ -19,6 +19,7 @@
   export let priceOverride = null;
   export let sale = false;
   export let backordered = null;
+  export let forceOutOfStock = false;
 
   export let VariantSelector = null;
   function handleVariantSelection(variant) {
@@ -65,8 +66,11 @@
 
   let addToCartLabel;
   $: {
-    if (product.forceOutOfStock || (selectedVariant && !selectedVariant.availableForSale)) {
+    if (forceOutOfStock || (selectedVariant && !selectedVariant.availableForSale)) {
       addToCartLabel = "Out of stock";
+      if (backordered) {
+        addToCartLabel += ` (${backordered})`;
+      }
     } else if (backordered) {
       addToCartLabel = `Add to cart (${backordered})`;
     } else {
@@ -135,7 +139,7 @@
           style="accent"
           fullWidth={true}
           on:click={addItem}
-          disabled={product.forceOutOfStock || !selectedVariant || selectedVariant?.availableForSale === false}
+          disabled={forceOutOfStock || !selectedVariant || selectedVariant?.availableForSale === false}
         >
           {addToCartLabel}
         </Button>

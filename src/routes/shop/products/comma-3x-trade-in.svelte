@@ -21,7 +21,7 @@
   export let product;
 </script>
 
-<Product {product}>
+<Product {product} backordered="4-12 weeks" forceOutOfStock={true}>
   <div slot="notes">
     <NoteCard title="Note">
       If you are already using a car harness, you only need to purchase this product. Do not return your car harness or other accessories. comma two, comma three, and comma 3X use the same harness.

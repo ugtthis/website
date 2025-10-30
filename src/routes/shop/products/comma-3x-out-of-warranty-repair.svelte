@@ -21,7 +21,7 @@
   export let product;
 </script>
 
-<Product {product}>
+<Product {product} backordered="4-12 weeks" forceOutOfStock={true}>
   <div slot="description">
     <strong>Description</strong>
     <p>
