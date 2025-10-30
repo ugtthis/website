@@ -4,7 +4,7 @@
   import CommaIcon from '$lib/icons/comma.svg?raw';
 </script>
 
-<div class="page">
+<div class="page light">
   {@html CommaIcon}
   <h1>{$page.error.message}</h1>
   <span>An issue occurred. <a class="highlight" href="/">Click here</a> to go back to the homepage.</span>
@@ -12,7 +12,6 @@
 
 <style>
   .page {
-    --color-foreground: black;
     display: flex;
     flex-direction: column;
     align-items: center;
