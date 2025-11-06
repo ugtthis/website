@@ -65,11 +65,6 @@
         "type": 301
       },
       {
-        "source": "/hack",
-        "destination": "https://blog.comma.ai/comma_hack/",
-        "type": 302
-      },
-      {
         "source": "/hyundai-guide",
         "destination": "https://github.com/commaai/openpilot/wiki/Hyundai-Kia-Genesis#harness-guide",
         "type": 302
