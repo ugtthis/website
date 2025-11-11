@@ -433,7 +433,7 @@ export const products = {
     id: "gid://shopify/Product/6786322858047",
     route: "/shop/comma-device-screen",
     category: "accessories",
-    price: "$100",
+    price: "$40",
     images: [
       "/src/lib/images/products/comma-three-device-screen/comma-three-device-screen.jpg"
     ],
@@ -455,12 +455,17 @@ export const products = {
         <li>only includes the screen (no case)</li>
         <li>compatible with both comma three and comma 3X</li>
       </ul>
-      <strong>comma three - screen + front case</strong>
+      <strong>comma three</strong>
       <ul>
-        <li>comma three display pre-attached to front case</li>
         <li>NOTE: comma three front cases are out of stock; purchase the "comma 3/3X - screen only" instead and attach to your existing front case</li>
       </ul>
-    `.trim()
+      <strong>What's Grade B?</strong>
+      <p>
+        We no longer have inventory of our Grade A screens, so we are offering Grade B screens at a discount.
+        Grade B screens are fully functional, but may have some minor cosmetic imperfections.
+      </p>
+    `.trim(),
+    hideOutOfStockVariants: true
   },
 
   "comma-3x-back-case": {
