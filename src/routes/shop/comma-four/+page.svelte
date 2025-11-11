@@ -55,7 +55,7 @@
           <p>comma four</p>
         </div>
         <div>
-          <img src={OBDCCableImage} loading="lazy" alt="2ft right-angle OBD-C cable">
+          <img src={OBDCCableImage} loading="lazy" alt="2ft OBD-C cable">
           <p>2 ft right-angle OBD-C cable</p>
         </div>
         <div>

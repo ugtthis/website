@@ -67,15 +67,9 @@
 
     <strong>Select a harness to connect the comma four to your car.</strong>
     <HarnessSelector
-      label="Add harness for your vehicle"
+      label="Select your car"
       onChange={handleHarnessSelection}
     >
-      <div slot="accessoryLabel" class="harness-price">
-        <div style="width: 0.75rem;"/>
-        <div>
-          included
-        </div>
-      </div>
     </HarnessSelector>
     <NoteCard title="Upgrading from another comma device?">
       You do not need a new car harness.
