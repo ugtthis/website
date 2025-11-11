@@ -11,11 +11,13 @@
   import WarrantyIcon from "$lib/icons/features/warranty.svg?raw";
 
   import { FOUR_PRICE } from '$lib/constants/prices.js';
+  import { NO_HARNESS_OPTION } from '$lib/constants/vehicles.js';
 </script>
 
 <script>
   export let product;
   let additionalProductIds = [];
+  let disableBuyButtonText = "SELECT YOUR CAR";
 
   let showDisclaimerModal = false;
   let onProceed;
@@ -44,18 +46,24 @@
   let backordered = null;
   const handleHarnessSelection = (value) => {
     selectedHarness = value;
-    if (value) {
+    if (value === NO_HARNESS_OPTION) {
+      additionalProductIds = []
+      backordered = null;
+      disableBuyButtonText = null;
+    } else if (value) {
       additionalProductIds = [value?.id]
       backordered = value.currentlyNotInStock ? `ships in ${(value.backordered || '1-12 weeks')}` : null;
+      disableBuyButtonText = null;
     } else {
       additionalProductIds = [];
       backordered = null;
+      disableBuyButtonText = "SELECT YOUR CAR";
     }
     backordered = '1-12 weeks';
   }
 </script>
 
-<Product {product} {additionalProductIds} {backordered} {beforeAddToCart} {getCartNote} priceOverride={FOUR_PRICE}>
+<Product {product} {additionalProductIds} {backordered} {beforeAddToCart} {getCartNote} priceOverride={FOUR_PRICE} disableBuyButtonText={disableBuyButtonText}>
   <div slot="shipping"></div>
 
   <span slot="price-accessory">
@@ -69,6 +77,7 @@
     <HarnessSelector
       label="Select your car"
       onChange={handleHarnessSelection}
+      showNoHarnessOption={true}
     >
     </HarnessSelector>
     <NoteCard title="Upgrading from another comma device?">

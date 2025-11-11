@@ -7,6 +7,7 @@
   import { clickOutside } from '$lib/utils/clickOutside';
   import { allHarnesses, vehicleHarnesses, genericHarnesses } from '$lib/utils/harnesses';
   import { selectedCar } from '../../../store';
+  import { NO_HARNESS_OPTION } from '$lib/constants/vehicles.js';
 
   import NoteCard from '$lib/components/NoteCard.svelte';
   import DropdownItem from './HarnessDropdownItem.svelte';
@@ -19,6 +20,7 @@
 
   export let label = "Select vehicle";
   export let placeholder = "Search for a vehicle or harness";
+  export let showNoHarnessOption = false; // shows "I already have a harness" option
   export let showVehicleHarnesses = true; // If true, includes the harnesses by each vehicle model
   export let showGenericHarnesses = true; // If true, includes the generic/developer harnesses
   export let hideSupportNoteCard = false;
@@ -142,6 +144,9 @@
         <DropdownItem value={{ car: 'No matching vehicles' }} />
       {/if}
     {:else}
+      {#if showNoHarnessOption}
+      <DropdownItem value={NO_HARNESS_OPTION} on:click={() => handleOptionClick(NO_HARNESS_OPTION)} on:keydown={(e) => handleOptionKeyDown(e, NO_HARNESS_OPTION)} />
+      {/if}
       {#each $harnesses as item}
         <DropdownItem value={item} on:click={() => handleOptionClick(item)} on:keydown={(e) => handleOptionKeyDown(e, item)} />
       {/each}
