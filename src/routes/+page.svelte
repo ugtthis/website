@@ -209,8 +209,7 @@
 
     @media screen and (max-width: 698px) {
       bottom: calc(30px);
-      padding: 0;
-      margin: 0 2rem;
+      padding: 0 2rem;
       gap: 0.5rem;
     }
   }
@@ -303,10 +302,12 @@
     }
 
     @media screen and (max-width: 698px) {
-      min-width: 100%;
+      min-width: auto;
+      width: 100%;
       padding: 1.25rem 2rem;
       font-size: 1.25rem;
       gap: 2rem;
+      box-sizing: border-box;
     }
 
   }
@@ -321,7 +322,7 @@
     user-select: none;
 
     @media screen and (max-width: 698px) {
-      font-size: 14px;
+      font-size: 20px;
     }
   }
 
@@ -368,7 +369,7 @@
 
     @media screen and (max-width: 698px) {
       max-width: 100%;
-      font-size: 14px;
+      font-size: 20px;
     }
   }
 
