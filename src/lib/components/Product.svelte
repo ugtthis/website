@@ -128,7 +128,11 @@
         </Button>
         <slot name="shipping">
           <NoteCard title="Shipping" icon={ShippingIcon}>
+          {#if product?.freeRush}
+            Free Rush (UPS 2nd Day Air) shipping. $30 flat rate internationally.
+          {:else}
             Free US shipping, $30 flat rate internationally.
+          {/if}
           </NoteCard>
         </slot>
         <slot name="notes"></slot>
