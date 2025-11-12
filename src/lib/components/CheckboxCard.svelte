@@ -4,9 +4,15 @@
   export let title;
   export let checked = false;
   export let onToggle;
+
+  const handleCardClick = (event) => {
+    if (event.target.closest("a")) return;
+    if (event.target.closest(".checkbox-label")) return;
+    onToggle && onToggle();
+  };
 </script>
 
-<div class="checkbox-card" class:checked={checked}>
+<div class="checkbox-card" class:checked={checked} on:click={handleCardClick}>
   <NoteCard {title}>
     <label class="checkbox-label" slot="icon">
       <input type="checkbox" checked={checked} on:change={() => onToggle && onToggle()} />
@@ -19,6 +25,7 @@
   .checkbox-card {
     margin: 1rem 0;
     position: relative;
+    cursor: pointer;
   }
 
   .checkbox-label {
@@ -36,6 +43,8 @@
     height: 1.25rem;
     cursor: pointer;
     margin: 0;
+    accent-color: var(--color-accent);
+    border: 1px solid #000;
   }
 
   .checkbox-card :global(.icon-slot) {
@@ -47,4 +56,3 @@
     color: black;
   }
 </style>
-
