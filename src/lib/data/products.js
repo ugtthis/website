@@ -281,7 +281,7 @@ export const products = {
         <p>
           Check the <a href="../shop/car-harness" target="_blank">car harness page</a>
           to determine if your car harness kit requires this cable instead of the
-          standard right-angle cable.
+          standard cable.
         </p>
       </div>
     `.trim()
