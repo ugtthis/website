@@ -88,10 +88,9 @@
     <nav class="navbar-section-links">
       <a href="/" class:active={$page.url.pathname === '/'}>home</a>
       <a href="/shop" class:active={$page.url.pathname.startsWith('/shop')}>shop</a>
-      <a href="/setup" class:active={$page.url.pathname.startsWith('/setup')}>setup</a>
-      <a href="/support" class="hide-mobile-1" class:active={$page.url.pathname.startsWith('/support')}>support</a>
-      <a href="/vehicles" class="hide-mobile-2" class:active={$page.url.pathname.startsWith('/vehicles')}>vehicles</a>
-      <a href="/jobs" class="hide-mobile-3" class:active={$page.url.pathname.startsWith('/jobs')}>jobs</a>
+      <a href="/support" class:active={$page.url.pathname.startsWith('/support')}>faq</a>
+      <a href="/vehicles" class="hide-mobile-1" class:active={$page.url.pathname.startsWith('/vehicles')}>supported cars</a>
+      <a href="/jobs" class="hide-mobile-2" class:active={$page.url.pathname.startsWith('/jobs')}>jobs</a>
     </nav>
     <div class="navbar-section-buttons">
       <!-- <a class="button shop" href="/shop">
@@ -250,19 +249,19 @@
       }
     }
 
-    @media only screen and (max-width: 440px) {
-      & a.hide-mobile-3 {
-        display: none;
-      }
-    }
+    /*@media only screen and (max-width: 440px) {*/
+    /*  & a.hide-mobile-3 {*/
+    /*    display: none;*/
+    /*  }*/
+    /*}*/
 
-    @media only screen and (max-width: 385px) {
+    @media only screen and (max-width: 405px) {
       & a.hide-mobile-2 {
         display: none;
       }
     }
 
-    @media only screen and (max-width: 305px) {
+    @media only screen and (max-width: 350px) {
       & a.hide-mobile-1 {
         display: none;
       }
@@ -270,19 +269,19 @@
   }
 
   /* Wrap nav bar links earlier if cart button is showing */
-  @media (max-width: 540px) {
-    .navbar-container:has(.cart) .navbar-section-links a.hide-mobile-3 {
-      display: none;
-    }
-  }
+  /*@media (max-width: 540px) {*/
+  /*  .navbar-container:has(.cart) .navbar-section-links a.hide-mobile-3 {*/
+  /*    display: none;*/
+  /*  }*/
+  /*}*/
 
-  @media (max-width: 480px) {
+  @media (max-width: 490px) {
     .navbar-container:has(.cart) .navbar-section-links a.hide-mobile-2 {
       display: none;
     }
   }
 
-  @media (max-width: 395px) {
+  @media (max-width: 436px) {
     .navbar-container:has(.cart) .navbar-section-links a.hide-mobile-1 {
       display: none;
     }
