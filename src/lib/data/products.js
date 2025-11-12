@@ -255,7 +255,7 @@ export const products = {
     category: "accessories",
     price: "$20",
     images: [
-      "/src/lib/images/products/obd-c-cable/obd-c-right-cable.jpg",
+      "/src/lib/images/products/obd-c-cable/obd-c-cable-four.png",
       "/src/lib/images/products/obd-c-cable/obd-c-long-cable.jpg"
     ],
     notes: [],
@@ -275,13 +275,13 @@ export const products = {
         <hgroup>
           <div>
             <span>variant</span>
-            <strong>comma 3/3X long (9.5 ft)</strong>
+            <strong>comma long (9.5 ft)</strong>
           </div>
         </hgroup>
         <p>
           Check the <a href="../shop/car-harness" target="_blank">car harness page</a>
           to determine if your car harness kit requires this cable instead of the
-          standard cable.
+          standard cable. This is the same cable from the comma three/3X car harness kit.
         </p>
       </div>
     `.trim()
@@ -356,9 +356,7 @@ export const products = {
     category: "accessories",
     price: "$20",
     images: [
-      "/src/lib/images/products/replacement-mounts/replacement-mounts-3x.png",
-      "/src/lib/images/products/replacement-mounts/mount-3x.png",
-      "/src/lib/images/products/replacement-mounts/mount-3x-8deg.png"
+      "/src/lib/images/products/replacement-mounts/replacement-mounts-four.png",
     ],
     notes: [
       {
@@ -373,8 +371,7 @@ export const products = {
     description: `
       <strong>Description</strong>
       <p>
-        We recommend allowing 48 hours for the mount to cure before use.
-        See <a href="/setup" target="_blank">comma.ai/setup</a> for more information.
+        comma four mounts are compatible with every vehicle openpilot supports.
       </p>
       <hr />
       <hgroup>
@@ -384,11 +381,11 @@ export const products = {
         </div>
       </hgroup>
       <p>
-        Standard mount compatible with all vehicles.<br /><br />
+        Mount compatible with all vehicles.<br /><br />
         <strong>Includes:</strong>
       </p>
       <p>
-        (2) standard mounts with adhesive backing
+        (2) mounts with adhesive backing
       </p>
       <p>
         (1) alcohol wipe
@@ -435,7 +432,8 @@ export const products = {
           href="https://github.com/commaai/hardware"
           target="_blank">open source</a> files.
       </p>
-    `.trim()
+    `.trim(),
+    hideOutOfStockVariants: true
   },
 
   "comma-device-screen": {
