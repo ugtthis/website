@@ -1,6 +1,7 @@
 <script context="module">
   import Product from "$lib/components/Product.svelte";
   import NoteCard from "$lib/components/NoteCard.svelte";
+  import CheckboxCard from "$lib/components/CheckboxCard.svelte";
   import Accordion from "$lib/components/Accordion.svelte";
   import Badge from "$lib/components/Badge.svelte";
   import HarnessSelector from "$lib/components/HarnessSelector/HarnessSelector.svelte";
@@ -15,6 +16,10 @@
 </script>
 
 <script>
+  import { onMount } from 'svelte';
+  import { getProduct } from '$lib/utils/shopify';
+  import { products as productsData } from '$lib/data/products.js';
+
   export let product;
   let additionalProductIds = [];
   let disableBuyButtonText = "SELECT YOUR CAR";
@@ -42,25 +47,57 @@
   }
 
   let selectedHarness = null;
-
+  let tradeInVariantId = null;
+  let tradeInChecked = false;
   let backordered = null;
+
+  const updateAdditionalProductIds = () => {
+    additionalProductIds = [];
+    if (selectedHarness && selectedHarness !== NO_HARNESS_OPTION) {
+      additionalProductIds.push(selectedHarness.id);
+    }
+    if (tradeInChecked && tradeInVariantId) {
+      additionalProductIds.push(tradeInVariantId);
+    }
+  }
+
   const handleHarnessSelection = (value) => {
     selectedHarness = value;
+    updateAdditionalProductIds();
     if (value === NO_HARNESS_OPTION) {
-      additionalProductIds = []
       backordered = null;
       disableBuyButtonText = null;
     } else if (value) {
-      additionalProductIds = [value?.id]
       backordered = value.currentlyNotInStock ? `ships in ${(value.backordered || '1-12 weeks')}` : null;
       disableBuyButtonText = null;
     } else {
-      additionalProductIds = [];
       backordered = null;
       disableBuyButtonText = "SELECT YOUR CAR";
     }
     backordered = '1-12 weeks';
   }
+
+  const handleTradeInToggle = () => {
+    tradeInChecked = !tradeInChecked;
+    updateAdditionalProductIds();
+  }
+
+  onMount(async () => {
+    // Fetch trade-in product variant ID
+    try {
+      const tradeInProductId = productsData["comma-four-trade-in"]?.id;
+      if (!tradeInProductId) return;
+      const response = await getProduct(tradeInProductId);
+      if (response.status === 200) {
+        const tradeInProduct = response.body?.data?.product;
+        if (tradeInProduct?.variants?.nodes?.length > 0) {
+          tradeInVariantId = tradeInProduct.variants.nodes[0].id;
+        }
+      }
+    } catch (error) {
+      console.error('Failed to fetch trade-in product:', error);
+    }
+  });
 </script>
 
 <Product {product} {additionalProductIds} {backordered} {beforeAddToCart} {getCartNote} priceOverride={FOUR_PRICE} disableBuyButtonText={disableBuyButtonText}>
@@ -80,19 +117,17 @@
       showNoHarnessOption={true}
     >
     </HarnessSelector>
-    <NoteCard title="$250 credit with trade-in">
+    <CheckboxCard title="$250 credit with trade-in" checked={tradeInChecked} onToggle={handleTradeInToggle}>
       Get $250 credit when you trade in your old comma device, in any condition.
-      <a href="/shop/comma-four-trade-in">Learn more</a>
-    </NoteCard>
+      <a href="/shop/comma-four-trade-in">Instructions and Terms</a>
+    </CheckboxCard>
+  </span>
+
+  <div slot="notes">
     <NoteCard title="Upgrading from another comma device?">
       You do not need a new car harness. All comma devices use the same harness.
     </NoteCard>
-    <NoteCard title="Shipping">
-      Free Rush (UPS 2nd Day Air) shipping. $30 flat rate internationally.
-    </NoteCard>
-  </span>
-
-  <div slot="notes"></div>
+  </div>
 
   <div slot="description">
     <div class="item">
