@@ -39,7 +39,7 @@
           It runs <a class="highlight" href="https://github.com/commaai/openpilot" target="_blank">openpilot</a>, which can drive for hours without driver action.
         </p>
         <p>
-          Besides cameras, the comma four has a suite of connectivity and sensors including cellular LTE, Wi-Fi, an IMU, high-precision GPS, and microphones.
+          Besides cameras, the comma four has a suite of connectivity and sensors including cellular LTE, Wi-Fi, an IMU, high-precision GPS, and a microphone.
         </p>
         <p>
           You need a car harness if you don't already have one, which is free with purchase of comma four. The car harness is our universal interface to your car. Use the car harness to connect your comma device to your vehicle.
