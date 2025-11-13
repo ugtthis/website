@@ -43,6 +43,9 @@
       <strong>THE FINE PRINT</strong>
       <ul>
         <li>
+          Trade-ins are final sale, no returns.
+        </li>
+        <li>
           This trade-in offer is ONLY good for the original device owner. <b>What does this mean?</b> The device sent for trade-in must have been purchased
           from the comma shop by the same person purchasing the comma four trade-in offer. The name and/or address on the original and new comma four order must
           be the same. Resale and second market devices do not qualify for trade-in at this time. You must include your original comma device's order number <b>and</b>
