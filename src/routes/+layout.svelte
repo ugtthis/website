@@ -9,21 +9,13 @@
 
   import { get } from "svelte/store";
 
-  import Badge from "$lib/components/Badge.svelte";
-  import Grid from "$lib/components/Grid.svelte";
-  import SocialIcons from "$lib/components/SocialIcons.svelte";
-  import MailingListForm from "$lib/components/MailingListForm.svelte";
-
-  import CommaIcon from "$lib/icons/comma.svg?raw";
-  import CartIcon from "$lib/icons/ui/cart.svg?raw";
-  import BasketIcon from "$lib/icons/ui/basket.svg?raw";
-  import ExternalIcon from "$lib/icons/ui/external.svg?raw";
 
   import { updateCart } from '$lib/utils/shopify';
   import { printConsoleBanner } from '$lib/utils/console';
 
-  import HeaderMenu from "$lib/components/HeaderMenu.svelte";
+  import CommandPalette from "$lib/components/CommandPalette.svelte";
   import ShoppingCart from "$lib/components/ShoppingCart.svelte";
+  import CartNotification from "$lib/components/CartNotification.svelte";
   import {
     loadCart,
     cartId,
@@ -32,7 +24,6 @@
   } from "../store.js";
 
   import { onMount } from "svelte";
-  import { page } from "$app/stores";
 
   let loading = false;
 
@@ -41,8 +32,16 @@
     showCart.set(true);
   }
 
-  function hideCart() {
+  function closeCart() {
     showCart.set(false);
+  }
+
+  async function toggleCart() {
+    if ($showCart) {
+      closeCart();
+    } else {
+      await openCart();
+    }
   }
 
   async function updateProduct(event) {
@@ -60,7 +59,7 @@
     await loadCart();
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
-        showCart.set(false);
+        closeCart();
       }
     });
   });
@@ -80,36 +79,16 @@
 
 <header class="navbar">
   <div class="navbar-container">
-    <!-- <div class="navbar-section-logo">
-      <div class="menu-container">
-        <HeaderMenu />
-      </div>
-    </div> -->
-    <nav class="navbar-section-links">
-      <a href="/" class:active={$page.url.pathname === '/'}>home</a>
-      <a href="/shop" class:active={$page.url.pathname.startsWith('/shop')}>shop</a>
-      <a href="/support" class:active={$page.url.pathname.startsWith('/support')}>faq</a>
-      <a href="/vehicles" class="hide-mobile-1" class:active={$page.url.pathname.startsWith('/vehicles')}>supported cars</a>
-      <a href="/jobs" class="hide-mobile-2" class:active={$page.url.pathname.startsWith('/jobs')}>jobs</a>
-    </nav>
-    <div class="navbar-section-buttons">
-      <!-- <a class="button shop" href="/shop">
-        {@html BasketIcon}
-        Shop
-      </a> -->
-      {#if $cartTotalQuantity > 0}
-        <button class="button cart" on:click={openCart}>
-          {@html CartIcon}
-          <div class="cart-text">cart ({$cartTotalQuantity})</div>
-        </button>
-      {/if}
-    </div>
+    <CommandPalette />
+    {#if $cartTotalQuantity > 0}
+      <CartNotification on:click={toggleCart} />
+    {/if}
   </div>
 </header>
 
 {#if $showCart}
   <ShoppingCart
-    on:click={hideCart}
+    on:click={closeCart}
     on:updateProduct={updateProduct}
     bind:loading
   />
@@ -156,203 +135,24 @@
   .navbar {
     top: 1rem;
     position: fixed;
-    left: 1rem;
-    right: 1rem;
-    width: auto;
-    z-index: 20;
-    border-radius: 0.5rem;
-
-    background-color: rgba(0, 0, 0, 0.75);
-    border-bottom: 1px solid #000;
-    backdrop-filter: blur(10px);
-    overflow: visible;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    pointer-events: none;
   }
 
   .navbar-container {
     display: flex;
-    align-items: stretch;
-    justify-content: space-between;
-    border-radius: 0.5rem;
-    overflow: visible;
-
-    @media only screen and (max-width: 1160px) {
-      flex-wrap: wrap;
-    }
-  }
-
-  .navbar-section-logo {
-    flex-direction: row-reverse;
+    justify-content: center;
     align-items: center;
-    display: flex;
-    border-right: 1px solid #000;
-
-    & > .title {
-      font-family: "Monument Extended Black", sans-serif;
-      font-size: 20px;
-      color: black;
-      height: 20px;
-      text-transform: uppercase;
-      padding: 0 2rem;
-    }
-
-    @media only screen and (max-width: 1280px) {
-      border-right: none;
-    }
-
-    @media only screen and (max-width: 768px) {
-      flex: 1;
-
-      & > .title {
-        display: flex;
-        flex: 1;
-        justify-content: center;
-      }
-    }
-
-    @media only screen and (max-width: 375px) {
-      & > .title {
-        padding: 0 0.25rem;
-      }
-    }
+    gap: 8px;
+    pointer-events: auto;
   }
 
-  .navbar-section-links {
-    display: flex;
-    flex: 1;
-    align-items: center;
-    justify-content: left;
-
-    & a {
-      color: #ffffff;
-      margin: 1.0rem 1.5rem;
-      font-family: Inter, sans-serif;
-      font-size: 1.125rem;
-      white-space: nowrap;
-      transition: color 0.2s, text-shadow 0.2s;
-
-      &.active,
-      &:active {
-        color: var(--color-accent);
-        text-shadow: 0 0 8px var(--color-accent), 0 0 16px var(--color-accent);
-      }
-
-      @media (hover: hover) and (pointer: fine) {
-        &:hover {
-          color: var(--color-accent);
-          text-shadow: 0 0 8px var(--color-accent), 0 0 16px var(--color-accent);
-        }
-      }
-
-      @media only screen and (max-width: 710px) {
-        margin: 1.0rem 0.75rem;
-        font-size: 1rem;
-      }
-    }
-
-    /*@media only screen and (max-width: 440px) {*/
-    /*  & a.hide-mobile-3 {*/
-    /*    display: none;*/
-    /*  }*/
-    /*}*/
-
-    @media only screen and (max-width: 405px) {
-      & a.hide-mobile-2 {
-        display: none;
-      }
-    }
-
-    @media only screen and (max-width: 350px) {
-      & a.hide-mobile-1 {
-        display: none;
-      }
-    }
-  }
-
-  /* Wrap nav bar links earlier if cart button is showing */
-  /*@media (max-width: 540px) {*/
-  /*  .navbar-container:has(.cart) .navbar-section-links a.hide-mobile-3 {*/
-  /*    display: none;*/
-  /*  }*/
-  /*}*/
-
-  @media (max-width: 490px) {
-    .navbar-container:has(.cart) .navbar-section-links a.hide-mobile-2 {
-      display: none;
-    }
-  }
-
-  @media (max-width: 436px) {
-    .navbar-container:has(.cart) .navbar-section-links a.hide-mobile-1 {
-      display: none;
-    }
-  }
-
-  .navbar-section-buttons {
-    display: flex;
-
-    & .cart, & .shop {
-      border: none;
-
-      & svg {
-        margin-right: 0.5rem;
-      }
-    }
-
-    & .button {
-      color: #000;
-      text-transform: uppercase;
-      font-family: Inter, sans-serif;
-      border: none;
-      padding-left: 56px;
-      padding-right: 56px;
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      background-color: var(--color-accent);
-
-      &:last-child {
-        border-top-right-radius: 0.5rem;
-        border-bottom-right-radius: 0.5rem;
-      }
-
-      &:not(:first-child) {
-        border-left: 1px solid #000;
-      }
-
-      @media (hover: hover) and (pointer: fine) {
-        &:hover {
-          background-color: var(--color-accent-hover);
-        }
-      }
-      &:active {
-        background-color: var(--color-accent-hover);
-      }
-    }
-
-    @media only screen and (max-width: 1300px) {
-      /* show single button, with priority for cart */
-      &.navbar-section-buttons > :first-child:not(:only-child) {
-        display: none;
-      }
-
-      & .cart .cart-text {
-        display: none;
-      }
-
-      & .cart {
-        padding-left: 25px;
-        padding-right: 25px;
-      }
-
-      & .shop {
-        padding-left: 10px;
-        padding-right: 10px;
-      }
-    }
-  }
 
   footer {
     background-color: #333;
