@@ -1,5 +1,9 @@
 @import './space.css';
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html {
   scroll-padding-top: 6rem;
 }
