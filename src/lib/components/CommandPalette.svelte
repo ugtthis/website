@@ -47,6 +47,16 @@
     selectedIndex = 0;
   }
 
+  // Disable body scroll when palette is open on mobile
+  $: if (browser && isOpen) {
+    const isMobile = window.matchMedia('(max-width: 500px)').matches;
+    if (isMobile) {
+      document.body.style.overflow = 'hidden';
+    }
+  } else if (browser) {
+    document.body.style.overflow = '';
+  }
+
   function navigateToItem(item) {
     if (item.external) {
       window.open(item.href, '_blank');
@@ -118,6 +128,7 @@
   onDestroy(() => {
     if (browser) {
       document.removeEventListener('keydown', handleKeydown);
+      document.body.style.overflow = '';
     }
   });
 </script>
@@ -184,13 +195,14 @@
 <style>
   .command-palette-wrapper {
     position: relative;
-    width: 432px;
+    width: 332px;
+    margin: 0 auto;
     z-index: 1000;
   }
 
   /* Button when closed */
   .search-trigger {
-    width: 432px;
+    width: 100%;
     height: 48px;
     background-color: #cccccc86;
     backdrop-filter: blur(6px);
@@ -207,7 +219,6 @@
     font-family: 'JetBrains Mono', monospace;
     position: relative;
     z-index: 1001;
-    box-sizing: border-box;
   }
 
   /* Hover effect - desktop only (not mobile) */
@@ -215,7 +226,6 @@
     .search-trigger:hover:not(.active) {
       background-color: #c9c9c9b2;
       box-shadow: 0 0 5px 2px rgba(47, 47, 47, 0.9) inset;
-      transition: all 0.2s ease-in-out;
     }
   }
 
@@ -291,7 +301,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    width: 432px;
+    width: 100%;
     background-color: rgba(42, 42, 42, 0.4);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -301,7 +311,6 @@
     overflow: hidden;
     animation: expandDown 0.3s ease-out;
     z-index: 1000;
-    box-sizing: border-box;
   }
 
   @keyframes expandDown {
@@ -337,7 +346,6 @@
     outline: none;
     transition: border-color 0.2s;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
   }
 
   .search-input:focus {
@@ -417,13 +425,40 @@
   @media (max-width: 500px) {
     .command-palette-wrapper {
       width: 100%;
-      min-width: 280px;
-      max-width: 432px;
+      margin: 0;
+      padding: 0 1rem;
     }
 
-    .search-trigger,
+    .search-trigger.active {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      right: 1rem;
+      width: auto;
+      z-index: 1003;
+      margin: 0;
+      max-width: calc(100vw - 2rem);
+      padding: 0 12px;
+    }
+
     .expanded-content {
-      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 100dvh;
+      max-height: 100dvh;
+      overflow-y: auto;
+      z-index: 1002;
+      animation: fadeIn 0.2s ease-out;
+      padding-top: 4.5rem;
+    }
+
+    .backdrop-overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1001;
     }
   }
 </style>

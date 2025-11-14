@@ -153,6 +153,12 @@
     pointer-events: auto;
   }
 
+  @media (max-width: 500px) {
+    .navbar-container {
+      width: 100%;
+    }
+  }
+
 
   footer {
     background-color: #333;
