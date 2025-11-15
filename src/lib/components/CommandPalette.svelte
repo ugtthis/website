@@ -195,7 +195,7 @@
 <style>
   .command-palette-wrapper {
     position: relative;
-    width: 332px;
+    width: 300px;
     margin: 0 auto;
     z-index: 1000;
   }
