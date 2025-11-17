@@ -166,7 +166,7 @@
   .page-wrapper {
     position: relative;
     background-color: #D9D9D9;
-    background-image: url("data:image/svg+xml,%3Csvg width='240' height='32' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='8' y='18' font-family='monospace' font-size='11' fill='%23B0B0B0' opacity='0.25'%3E00101100 00110100 00101100 00110100 00101100 00110100%3C/text%3E%3Ctext x='8' y='32' font-family='monospace' font-size='11' fill='%23B0B0B0' opacity='0.25'%3E00110100 00101100 00110100 00101100 00110100 00101100%3C/text%3E%3C/svg%3E");
+    background-image: url("/binary-pattern.svg");
     background-size: 240px 32px;
     background-repeat: repeat;
     min-height: 100vh;
