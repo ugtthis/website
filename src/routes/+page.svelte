@@ -1,8 +1,13 @@
 <script>
-  import FourImage from "$lib/images/products/comma-four/four_screen_on.png";
-  import DiamondGradient from "$lib/images/diamand-gradient.png";
+  import FourImage from "$lib/images/products/comma-four/four_screen_on_1.png";
+  import DiamondGradient from "$lib/images/diamond-gradient-2.png";
   import MonumentExtendedBlack from "$lib/fonts/MonumentExtended/MonumentExtended-Black.woff2";
   import CartIcon from "$lib/icons/cart-2.svg?raw";
+  import ChevronIcon from "$lib/icons/icon-chevron.svg?raw";
+  import ExplodedSpecs from "$lib/images/exploded-specs-blur.png";
+  import ExplodedSpecsMobile from "$lib/images/mobile-exploded-specs-blur.png";
+  import CompatBrandsBanner from "$lib/images/compat-brands-banner.png";
+  import DrivingCabinPov from "$lib/images/driving-cabin-pov.png";
 </script>
 
 <svelte:head>
@@ -15,13 +20,9 @@
   />
   <link rel="preload" as="image" href={DiamondGradient} />
   <link rel="preload" as="image" href={FourImage} />
-  <style>
-    body {
-      background-color: #D9D9D9;
-    }
-  </style>
 </svelte:head>
 
+<div class="page-wrapper">
 <div class="hero-section">
   <div class="hero-container">
     <h1 class="hero-title">
@@ -43,17 +44,70 @@
         BUY NOW
         <span class="cart-icon">{@html CartIcon}</span>
       </a>
-    <a href="/" class="btn-learn-more">
+    <a href="#specs" class="btn-learn-more">
       Learn More
-      <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="chevron-icon">
-        <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      <span class="chevron-icon">{@html ChevronIcon}</span>
     </a>
   </div>
   </div>
 </div>
 
+<section class="banners-section banner-compat-brands">
+  <div class="banner-container">
+    <img src={CompatBrandsBanner} alt="Compatible car brands" class="banner-image" />
+    <h2 class="banner-text">Works with over<br>325+ cars</h2>
+  </div>
+</section>
+
+<section id="specs" class="specs-section">
+  <div class="specs-container">
+    <h2 class="specs-title">SPECS</h2>
+    <div class="specs-image-wrapper">
+      <img src={ExplodedSpecs} alt="Comma Four Exploded Specs" class="specs-image specs-image-desktop" />
+      <img src={ExplodedSpecsMobile} alt="Comma Four Exploded Specs" class="specs-image specs-image-mobile" />
+    </div>
+  </div>
+</section>
+
+<section class="banners-section banner-driving">
+  <div class="banner-container">
+    <img src={DrivingCabinPov} alt="Driving cabin view" class="banner-image" />
+    <h2 class="banner-text">make driving chill.</h2>
+  </div>
+</section>
+</div>
+
 <style>
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+
+  .page-wrapper {
+    position: relative;
+    background-color: #D9D9D9;
+    background-image: url("data:image/svg+xml,%3Csvg width='240' height='32' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='8' y='18' font-family='monospace' font-size='11' fill='%23B0B0B0' opacity='0.25'%3E00101100 00110100 00101100 00110100 00101100 00110100%3C/text%3E%3Ctext x='8' y='32' font-family='monospace' font-size='11' fill='%23B0B0B0' opacity='0.25'%3E00110100 00101100 00110100 00101100 00110100 00101100%3C/text%3E%3C/svg%3E");
+    background-size: 240px 32px;
+    background-repeat: repeat;
+    min-height: 100vh;
+    padding-bottom: 4rem;
+
+    @media screen and (max-width: 768px) {
+      padding-bottom: 3rem;
+    }
+  }
+
+  .page-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 900px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
   @font-face {
     font-display: swap;
     font-family: "Monument Extended Black";
@@ -63,26 +117,32 @@
 
   .hero-section {
     position: relative;
-    min-height: 100vh;
     width: 100%;
-    background: #D9D9D9;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     overflow: hidden;
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+    background: none;
+
+    @media screen and (max-width: 768px) {
+      padding-top: 1rem;
+      padding-bottom: 2.5rem;
+    }
   }
 
   .hero-container {
     position: relative;
     width: 100%;
     max-width: 1216px;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    margin: 0 auto;
+    z-index: 1;
 
     @media screen and (max-width: 768px) {
-      padding: 1rem;
+      padding: 1rem 1rem 0.5rem 1rem;
     }
   }
 
@@ -96,18 +156,18 @@
   }
 
   .gradient-background {
+    /* display: none; */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
+    width: 40%;
     min-width: 800px;
     height: auto;
     object-fit: contain;
     z-index: 0;
     user-select: none;
     pointer-events: none;
-    mix-blend-mode: difference;
 
     @media screen and (max-width: 768px) {
       min-width: 600px;
@@ -119,19 +179,24 @@
   }
 
   .hero-title {
-    margin: 7rem 0 2rem 2rem;
+    margin: 7rem auto 2rem auto;
     line-height: 0.55;
     font-family: "Monument Extended Black", sans-serif;
     font-size: clamp(40px, 7vw, 100px);
     font-weight: 900;
     letter-spacing: -0.02em;
+    text-align: center;
+    position: relative;
+    z-index: 10;
 
     @media screen and (max-width: 768px) {
-      margin: 6rem 0 2rem 1rem;
+      margin: 6rem auto 2rem auto;
+      font-size: clamp(60px, 10vw, 100px);
     }
 
     @media screen and (max-width: 480px) {
-      margin: 7rem 0 1.5rem 0.5rem;
+      margin: 7rem auto 1.5rem auto;
+      font-size: clamp(50px, 12vw, 100px);
     }
   }
 
@@ -142,7 +207,7 @@
 
   .title-four {
     margin-top: -0.15em;
-    background: linear-gradient(180deg, #426f4d 0%, #84ff00 100%);
+    background: linear-gradient(180deg, #125a24 0%, #84ff00 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -155,28 +220,28 @@
     margin-bottom: 5rem;
 
     @media screen and (max-width: 768px) {
-      margin-bottom: 4rem;
+      margin-bottom: 2rem;
     }
 
     @media screen and (max-width: 480px) {
-      margin-bottom: 3rem;
+      margin-bottom: 1.5rem;
     }
   }
 
   .device-container {
     position: relative;
-    max-width: 470px;
+    max-width: 380px;
 
     @media screen and (max-width: 1200px) {
-      max-width: 420px;
+      max-width: 350px;
     }
 
     @media screen and (max-width: 768px) {
-      max-width: 360px;
+      max-width: 300px;
     }
 
     @media screen and (max-width: 480px) {
-      max-width: 70vw;
+      max-width: 60vw;
     }
   }
 
@@ -195,16 +260,16 @@
     flex-direction: row;
     gap: 1.5rem;
     align-self: center;
-    width: 100%;
+    width: 80%;
     max-width: 600px;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     z-index: 1;
 
     @media screen and (max-width: 768px) {
       flex-direction: column;
       align-items: center;
       gap: 1rem;
-      padding-bottom: 1rem;
+      padding-bottom: 0.5rem;
       width: 100%;
       max-width: 100%;
     }
@@ -257,7 +322,7 @@
   }
 
   .btn-learn-more {
-    background: #8686863e;
+    background: rgba(243, 243, 243, 0.432);
     color: #ffffff;
     font-family: Inter, sans-serif;
     font-size: 18px;
@@ -267,10 +332,14 @@
     align-items: center;
     justify-content: space-between;
     flex: 1;
+    border: 2px solid #ffffff;
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
     transition: all 0.2s ease;
 
     &:hover {
       transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.2);
     }
 
     &:active {
@@ -287,6 +356,164 @@
   }
 
   .chevron-icon {
+    width: 12px;
+    height: 12px;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+
+    & :global(svg) {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .specs-section {
+    width: 100%;
+    padding: 4rem 0 6rem 0;
+    background: none;
+
+    @media screen and (max-width: 768px) {
+      padding: 3rem 0 4rem 0;
+    }
+  }
+
+  .specs-container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    @media screen and (max-width: 768px) {
+      width: 90%;
+      padding: 0 1rem;
+    }
+  }
+
+  .specs-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 2rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: left;
+
+    @media screen and (max-width: 768px) {
+      font-size: 2rem;
+      margin: 0 0 1.5rem 0;
+    }
+  }
+
+  .specs-image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .specs-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .specs-image-mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: 850px) {
+    .specs-image-desktop {
+      display: none;
+    }
+
+    .specs-image-mobile {
+      display: block;
+    }
+  }
+
+  .banners-section {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 0;
+    background: #000000;
+    overflow: hidden;
+  }
+
+  .banner-compat-brands {
+    height: 300px;
+
+    @media screen and (max-width: 850px) {
+      height: 220px;
+    }
+
+    @media screen and (max-width: 480px) {
+      height: 150px;
+    }
+  }
+
+  .banner-driving {
+    height: 550px;
+
+    @media screen and (max-width: 1200px) {
+      height: 450px;
+    }
+
+    @media screen and (max-width: 980px) {
+      height: 350px;
+    }
+
+    @media screen and (max-width: 768px) {
+      height: 250px;
+    }
+
+    @media screen and (max-width: 480px) {
+      height: 190px;
+    }
+  }
+
+  .banner-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .banner-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+  }
+
+  .banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Inter, sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 0 .25rem;
+    line-height: 1.2;
+    white-space: nowrap;
+
+    @media screen and (max-width: 480px) {
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+    }
   }
 </style>
