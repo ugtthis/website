@@ -164,7 +164,7 @@
           bind:this={searchInputElement}
           type="text"
           class="search-input"
-          placeholder="GO ..."
+          placeholder="GO..."
           bind:value={searchInput}
           maxlength="30"
           autocomplete="off"
