@@ -12,6 +12,11 @@
   import GallerySide from "$lib/images/products/comma-four/gallery/four_side.png";
   import GalleryBack from "$lib/images/products/comma-four/gallery/four_back.png";
   import GalleryAngled from "$lib/images/products/comma-four/gallery/four_angled.png";
+  import LightningIcon from "$lib/icons/ui/lightning-fast.svg?raw";
+  import CalendarIcon from "$lib/icons/ui/calendar.svg?raw";
+  import WifiIcon from "$lib/icons/ui/wifi.svg?raw";
+  import MoneyIcon from "$lib/icons/ui/money.svg?raw";
+  import CordIcon from "$lib/icons/ui/cord.svg?raw";
 
   const galleryImages = [
     { src: GalleryFront, alt: "comma four front" },
@@ -82,6 +87,35 @@
     <div class="specs-image-wrapper">
       <img src={ExplodedSpecs} alt="Comma Four Exploded Specs" class="specs-image specs-image-desktop" />
       <img src={ExplodedSpecsMobile} alt="Comma Four Exploded Specs" class="specs-image specs-image-mobile" />
+    </div>
+  </div>
+</section>
+
+<section class="included-things-section">
+  <div class="included-things-container">
+    <h2 class="included-things-title">What's Included</h2>
+
+    <div class="included-things-table">
+      <div class="included-things-row">
+        <span class="included-things-icon">{@html CordIcon}</span>
+        <span class="included-things-item">Free car harness with purchase</span>
+      </div>
+      <div class="included-things-row">
+        <span class="included-things-icon">{@html LightningIcon}</span>
+        <span class="included-things-item">Instant cure device mounts</span>
+      </div>
+      <div class="included-things-row">
+        <span class="included-things-icon">{@html CalendarIcon}</span>
+        <span class="included-things-item">1-year limited warranty against hardware defects</span>
+      </div>
+      <div class="included-things-row">
+        <span class="included-things-icon">{@html WifiIcon}</span>
+        <span class="included-things-item">One free month of comma prime</span>
+      </div>
+      <div class="included-things-row">
+        <span class="included-things-icon">{@html MoneyIcon}</span>
+        <span class="included-things-item">30-day money-back trial</span>
+      </div>
     </div>
   </div>
 </section>
@@ -717,6 +751,90 @@
     @media screen and (max-width: 768px) {
       font-size: 1.5rem;
       padding: 1.5rem;
+    }
+  }
+
+  .included-things-section {
+    padding: 0 2rem 4rem 2rem;
+    background: none;
+
+    @media screen and (max-width: 768px) {
+      padding: 0 1rem 3rem 1rem;
+    }
+  }
+
+  .included-things-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    @media screen and (max-width: 768px) {
+      padding: 0 1rem;
+    }
+  }
+
+  .included-things-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 2rem;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1.5rem;
+      margin: 0 0 1.5rem;
+    }
+  }
+
+  .included-things-table {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .included-things-row {
+    background: rgba(243, 243, 243, 0.2);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    border: 2px solid #ffffff;
+    border-top: none;
+    padding: 1.75rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    &:first-child {
+      border-top: 2px solid #ffffff;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 1.5rem 1.5rem;
+    }
+  }
+
+  .included-things-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+
+    @media screen and (max-width: 768px) {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .included-things-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: #000;
+
+    @media screen and (max-width: 850px) {
+      font-size: 1rem;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 0.75rem;
     }
   }
 </style>
