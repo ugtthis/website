@@ -435,6 +435,20 @@
       padding-top: 0.5rem;
     }
 
+    .nav-item {
+      padding: 16px 20px;
+      gap: 16px;
+    }
+
+    .nav-item .label {
+      font-size: 18px;
+    }
+
+    .nav-item .icon {
+      width: 28px;
+      height: 28px;
+    }
+
     .backdrop-overlay {
       background-color: rgba(0, 0, 0, 0.7);
       z-index: 1001;
