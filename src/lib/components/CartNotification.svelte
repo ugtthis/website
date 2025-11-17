@@ -35,6 +35,12 @@
     animation: slideIn 0.3s ease-out;
   }
 
+  @media (max-width: 500px) {
+    .cart-notification {
+      margin-right: 1rem;
+    }
+  }
+
   @keyframes slideIn {
     from {
       opacity: 0;

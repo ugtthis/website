@@ -153,6 +153,16 @@
     pointer-events: auto;
   }
 
+  @media (max-width: 1000px) {
+    .navbar-container {
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.5rem;
+      width: 300px;
+      margin: 0 auto;
+    }
+  }
+
   @media (max-width: 500px) {
     .navbar-container {
       width: 100%;
