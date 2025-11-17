@@ -2,8 +2,6 @@
   import FourImage from "$lib/images/products/comma-four/four_screen_on_1.png";
   import DiamondGradient from "$lib/images/diamond-gradient-2.png";
   import MonumentExtendedBlack from "$lib/fonts/MonumentExtended/MonumentExtended-Black.woff2";
-  import CartIcon from "$lib/icons/cart-2.svg?raw";
-  import ChevronIcon from "$lib/icons/icon-chevron.svg?raw";
   import ExplodedSpecs from "$lib/images/exploded-specs-blur.png";
   import ExplodedSpecsMobile from "$lib/images/mobile-exploded-specs-blur.png";
   import CompatBrandsBanner from "$lib/images/compat-brands-banner.png";
@@ -64,13 +62,11 @@
     <div class="hero-buttons">
       <a href="/shop/comma-four" class="btn-buy-now">
         BUY NOW
-        <span class="cart-icon">{@html CartIcon}</span>
       </a>
-    <a href="#specs" class="btn-learn-more">
-      Learn More
-      <span class="chevron-icon">{@html ChevronIcon}</span>
-    </a>
-  </div>
+      <a href="#specs" class="btn-learn-more">
+        Learn More
+      </a>
+    </div>
   </div>
 </div>
 
@@ -365,7 +361,7 @@
     text-decoration: none;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex: 1;
     text-transform: uppercase;
     transition: all 0.2s ease;
@@ -387,20 +383,6 @@
     }
   }
 
-  .cart-icon {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-
-    & :global(svg) {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-  }
-
   .btn-learn-more {
     background: rgba(243, 243, 243, 0.432);
     color: #ffffff;
@@ -411,7 +393,7 @@
     padding: 16px 30px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex: 1;
     border: 2px solid #ffffff;
     backdrop-filter: blur(1px);
@@ -433,20 +415,6 @@
 
     @media screen and (max-width: 480px) {
       font-size: 16px;
-    }
-  }
-
-  .chevron-icon {
-    width: 12px;
-    height: 12px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-
-    & :global(svg) {
-      display: block;
-      width: 100%;
-      height: 100%;
     }
   }
 
