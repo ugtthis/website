@@ -45,6 +45,7 @@
   />
   <link rel="preload" as="image" href={DiamondGradient} />
   <link rel="preload" as="image" href={FourImage} />
+  <link rel="preload" as="image" href="/binary-pattern.svg" />
 </svelte:head>
 
 <div class="page-wrapper">
@@ -59,7 +60,7 @@
       <div class="gradient-device-wrapper">
         <img src={DiamondGradient} alt="" class="gradient-background" draggable="false" />
         <div class="device-container">
-          <img src={FourImage} alt="comma four device" class="device-image" draggable="false" />
+          <img src={FourImage} alt="comma four device" class="device-image" width="2548" height="2007" draggable="false" />
         </div>
       </div>
     </div>
@@ -312,6 +313,7 @@
   .device-container {
     position: relative;
     max-width: 380px;
+    aspect-ratio: 2548 / 2007;
 
     @media screen and (max-width: 1200px) {
       max-width: 350px;
