@@ -211,7 +211,6 @@
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     border: 2px solid #3434348f;
-    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -235,32 +234,28 @@
     background-color: rgba(42, 42, 42, 0.4);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: none;
+    border: 0;
     box-shadow: none;
   }
 
   .search-trigger.active .comma-icon {
-    flex-shrink: 0;
     color: #f4f4f4;
-    transition: color 0.2s ease-in-out;
   }
 
   .search-trigger.active .shortcut {
     color: #b7b7b783;
-    transition: color 0.2s ease-in-out;
   }
 
   .comma-icon {
     width: 9px;
-    height: auto;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     color: #000;
+    flex-shrink: 0;
   }
 
   .comma-icon :global(svg) {
-    width: 9px;
+    width: 100%;
     height: auto;
   }
 
@@ -304,8 +299,6 @@
     background-color: rgba(42, 42, 42, 0.4);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: none;
-    border-radius: 0;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     animation: expandDown 0.3s ease-out;
@@ -336,7 +329,6 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(64, 64, 64, 0.8);
-    border-radius: 0;
     padding: 0 16px;
     color: #fff;
     font-size: 16px;
@@ -369,7 +361,6 @@
     align-items: center;
     gap: 12px;
     padding: 12px 16px;
-    border-radius: 0;
     text-decoration: none;
     color: #fff;
     transition: all 0.15s;
@@ -384,10 +375,7 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   }
 
-  .nav-item.selected:not(.current) {
-    background-color: rgba(255, 255, 255, 0.15);
-  }
-
+  .nav-item.selected:not(.current),
   .nav-items[data-keyboard-active="false"] .nav-item:hover {
     background-color: rgba(255, 255, 255, 0.15);
   }
