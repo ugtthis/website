@@ -255,7 +255,7 @@
   }
 
   .hero-title {
-    margin: 7rem auto 2rem auto;
+    margin: 6rem auto 4rem auto;
     line-height: 0.55;
     font-family: "Monument Extended Black", sans-serif;
     font-size: clamp(40px, 7vw, 100px);
@@ -265,13 +265,13 @@
     position: relative;
     z-index: 10;
 
-    @media screen and (max-width: 768px) {
-      margin: 6rem auto 2rem auto;
+    @media screen and (max-width: 1200px) {
+      margin: 5rem auto 3rem auto;
       font-size: clamp(60px, 10vw, 100px);
     }
 
     @media screen and (max-width: 480px) {
-      margin: 7rem auto 1.5rem auto;
+      margin: 5rem auto 2.5rem auto;
       font-size: clamp(50px, 12vw, 100px);
     }
   }
@@ -296,11 +296,11 @@
     margin-bottom: 5rem;
 
     @media screen and (max-width: 768px) {
-      margin-bottom: 2rem;
+      margin-bottom: 4rem;
     }
 
     @media screen and (max-width: 480px) {
-      margin-bottom: 1.5rem;
+      margin-bottom: 3rem;
     }
   }
 
@@ -380,6 +380,7 @@
 
     @media screen and (max-width: 480px) {
       font-size: 14px;
+      width: 80%;
     }
   }
 
@@ -415,6 +416,7 @@
 
     @media screen and (max-width: 480px) {
       font-size: 16px;
+      width: 80%;
     }
   }
 
