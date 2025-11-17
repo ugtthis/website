@@ -8,7 +8,6 @@
 <button
   class="cart-notification"
   on:click={() => dispatch('click')}
-  aria-label={`Cart with {$cartTotalQuantity} item{$cartTotalQuantity === 1 ? '' : 's'}`}
 >
   <span class="cart-label">Cart</span>
   <span class="cart-badge">{$cartTotalQuantity}</span>
