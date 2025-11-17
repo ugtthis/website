@@ -165,17 +165,15 @@
       aria-label="Close command palette"
     ></div>
     <div class="expanded-content" role="dialog" aria-modal="true">
-      <div class="search-container">
-        <input
-          bind:this={searchInputElement}
-          type="text"
-          class="search-input"
-          placeholder="GO..."
-          bind:value={searchInput}
-          maxlength="30"
-          autocomplete="off"
-        />
-      </div>
+      <input
+        bind:this={searchInputElement}
+        type="text"
+        class="search-input"
+        placeholder="GO..."
+        bind:value={searchInput}
+        maxlength="30"
+        autocomplete="off"
+      />
 
       <div class="nav-items" data-keyboard-active={isUsingKeyboard}>
         {#each filteredItems as item, index}
@@ -296,6 +294,7 @@
     overflow: hidden;
     animation: expandDown 0.3s ease-out;
     z-index: 1000;
+    padding: 16px 12px 0;
   }
 
   @keyframes expandDown {
@@ -311,11 +310,8 @@
     }
   }
 
-  .search-container {
-    padding: 16px 20px;
-  }
-
   .search-input {
+    margin-bottom: 16px;
     width: 100%;
     height: 48px;
     background-color: rgba(31, 31, 31, 0.7);
@@ -425,7 +421,7 @@
       display: none;
     }
 
-    .search-container {
+    .search-input {
       display: none;
     }
 
