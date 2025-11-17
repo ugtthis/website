@@ -234,7 +234,13 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 0;
-    box-shadow: none;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    box-shadow:
+      inset -10px 0 3px -6px rgba(218, 218, 218, 0.25),
+      inset  10px 0 3px -6px rgba(218, 218, 218, 0.25),
+      inset   0px 10px 3px -6px rgba(218, 218, 218, 0.25);
   }
 
   .search-trigger.active .comma-icon {
@@ -291,7 +297,14 @@
     background-color: rgba(42, 42, 42, 0.4);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    border: 0;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    box-shadow:
+      inset -10px 0 3px -6px rgba(218, 218, 218, 0.25),
+      inset 10px 0 3px -6px rgba(218, 218, 218, 0.25),
+      inset 0 -10px 3px -6px rgba(218, 218, 218, 0.25);
     overflow: hidden;
     animation: expandDown 0.3s ease-out;
     z-index: 1000;
@@ -412,6 +425,7 @@
       margin: 0;
       max-width: calc(100vw - 2rem);
       padding: 0 12px;
+      border: 0;
     }
 
     .search-trigger {
@@ -436,6 +450,7 @@
       z-index: 1002;
       animation: fadeIn 0.2s ease-out;
       padding-top: 5rem;
+      border: 0;
     }
 
     .nav-items {
