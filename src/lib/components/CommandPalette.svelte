@@ -5,13 +5,13 @@
   import { page } from '$app/stores';
   import { clickOutside } from '$lib/utils/clickOutside';
   import CommaIcon from '$lib/icons/comma.svg?raw';
-  import CmdKIcon from '$lib/icons/cmd-k.svg?raw';
-  import SteeringWheelIcon from '$lib/icons/steering-wheel.svg?raw';
-  import CartIcon from '$lib/icons/cart-2.svg?raw';
-  import TextBlogIcon from '$lib/icons/text-blog.svg?raw';
-  import NewWindowIcon from '$lib/icons/new-window.svg?raw';
-  import LightningBoltIcon from '$lib/icons/lightning-bolt.svg?raw';
-  import SupportQuestionIcon from '$lib/icons/support-question.svg?raw';
+  import CmdKIcon from '$lib/icons/ui/cmd-k.svg?raw';
+  import SteeringWheelIcon from '$lib/icons/ui/steering-wheel.svg?raw';
+  import CartIcon from '$lib/icons/ui/cart-2.svg?raw';
+  import TextBlogIcon from '$lib/icons/ui/text-blog.svg?raw';
+  import NewWindowIcon from '$lib/icons/ui/new-window.svg?raw';
+  import LightningBoltIcon from '$lib/icons/ui/lightning-bolt.svg?raw';
+  import SupportQuestionIcon from '$lib/icons/ui/support-question.svg?raw';
 
   const navItems = [
     { label: 'HOME', href: '/', icon: SteeringWheelIcon },
@@ -445,6 +445,18 @@
       padding: 0 12px;
     }
 
+    .search-trigger {
+      justify-content: center;
+    }
+
+    .shortcut {
+      display: none;
+    }
+
+    .search-container {
+      display: none;
+    }
+
     .expanded-content {
       position: fixed;
       top: 0;
@@ -457,7 +469,11 @@
       overflow-y: auto;
       z-index: 1002;
       animation: fadeIn 0.2s ease-out;
-      padding-top: 4.5rem;
+      padding-top: 5rem;
+    }
+
+    .nav-items {
+      padding-top: 0.5rem;
     }
 
     .backdrop-overlay {
