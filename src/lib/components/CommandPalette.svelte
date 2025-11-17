@@ -273,22 +273,15 @@
 
   .backdrop-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background-color: rgba(0, 0, 0, 0.2);
     z-index: 999;
     animation: fadeIn 0.2s ease-out;
   }
 
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
   .expanded-content {
@@ -438,10 +431,7 @@
 
     .expanded-content {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      inset: 0;
       width: 100vw;
       height: 100dvh;
       max-height: 100dvh;
