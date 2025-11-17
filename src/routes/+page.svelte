@@ -69,7 +69,7 @@
         BUY NOW
       </a>
       <a href="#specs" class="btn-learn-more">
-        Learn More
+        LEARN MORE
       </a>
     </div>
   </div>
@@ -395,7 +395,6 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 18px;
     font-weight: 500;
-    text-transform: uppercase;
     padding: 16px 30px;
     display: flex;
     align-items: center;
