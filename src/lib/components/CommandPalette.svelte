@@ -306,7 +306,7 @@
   .search-input {
     margin-bottom: 16px;
     width: 100%;
-    height: 48px;
+    height: 40px;
     background-color: rgba(31, 31, 31, 0.7);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
