@@ -746,15 +746,14 @@
 
   .included-things-title {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 1.75rem;
+    font-weight: 600;
     color: #000;
-    margin: 0 0 2rem;
+    margin: 0 0 1.25rem;
     text-transform: uppercase;
 
     @media screen and (max-width: 768px) {
       font-size: 1.5rem;
-      margin: 0 0 1.5rem;
     }
   }
 
@@ -805,7 +804,7 @@
     }
 
     @media screen and (max-width: 480px) {
-      font-size: 0.75rem;
+      font-size: 1rem;
     }
   }
 </style>
