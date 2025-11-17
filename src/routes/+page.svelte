@@ -404,9 +404,10 @@
   .btn-learn-more {
     background: rgba(243, 243, 243, 0.432);
     color: #ffffff;
-    font-family: Inter, sans-serif;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 18px;
     font-weight: 500;
+    text-transform: uppercase;
     padding: 16px 30px;
     display: flex;
     align-items: center;
@@ -584,7 +585,7 @@
     transform: translate(-50%, -50%);
     font-family: Inter, sans-serif;
     font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 700;
+    font-weight: 600;
     color: #ffffff;
     text-align: center;
     margin: 0;
