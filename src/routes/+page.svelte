@@ -8,6 +8,23 @@
   import ExplodedSpecsMobile from "$lib/images/mobile-exploded-specs-blur.png";
   import CompatBrandsBanner from "$lib/images/compat-brands-banner.png";
   import DrivingCabinPov from "$lib/images/driving-cabin-pov.png";
+  import GalleryFront from "$lib/images/products/comma-four/gallery/four_front.png";
+  import GallerySide from "$lib/images/products/comma-four/gallery/four_side.png";
+  import GalleryBack from "$lib/images/products/comma-four/gallery/four_back.png";
+  import GalleryAngled from "$lib/images/products/comma-four/gallery/four_angled.png";
+
+  const galleryImages = [
+    { src: GalleryFront, alt: "comma four front" },
+    { src: GallerySide, alt: "comma four side" },
+    { src: GalleryBack, alt: "comma four back" },
+    { src: GalleryAngled, alt: "comma four angled" }
+  ];
+
+  let selectedImage = galleryImages[0];
+
+  function selectImage(image) {
+    selectedImage = image;
+  }
 </script>
 
 <svelte:head>
@@ -73,6 +90,35 @@
   <div class="banner-container">
     <img src={DrivingCabinPov} alt="Driving cabin view" class="banner-image" />
     <h2 class="banner-text">make driving chill.</h2>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <div class="gallery-container">
+    <h2 class="gallery-title">GALLERY</h2>
+
+    <div class="gallery-grid">
+      <div class="gallery-main">
+        <img src={selectedImage.src} alt={selectedImage.alt} class="gallery-main-image" />
+      </div>
+
+      <div class="gallery-thumbnails">
+        {#each galleryImages as image}
+          <button
+            class="gallery-thumbnail"
+            class:active={selectedImage === image}
+            on:click={() => selectImage(image)}
+            type="button"
+          >
+            <img src={image.src} alt={image.alt} class="gallery-thumb-image" />
+          </button>
+        {/each}
+      </div>
+    </div>
+
+    <a href="/shop/comma-four" class="gallery-buy-button">
+      Buy
+    </a>
   </div>
 </section>
 </div>
@@ -514,6 +560,163 @@
 
     @media screen and (max-width: 480px) {
       font-size: clamp(1.5rem, 4vw, 2.25rem);
+    }
+  }
+
+  .gallery-section {
+    width: 100%;
+    padding: 6rem 2rem 4rem 2rem;
+    background: none;
+
+    @media screen and (max-width: 768px) {
+      padding: 4rem 1rem 3rem 1rem;
+    }
+  }
+
+  .gallery-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    @media screen and (max-width: 768px) {
+      padding: 0 1rem;
+    }
+  }
+
+  .gallery-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 2rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    @media screen and (max-width: 768px) {
+      font-size: 2rem;
+      margin: 0 0 1.5rem 0;
+    }
+  }
+
+  .gallery-grid {
+    display: flex;
+    gap: 0;
+    margin-bottom: 3rem;
+    max-width: 100%;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .gallery-main {
+    flex: 1;
+    max-width: 800px;
+    aspect-ratio: 1;
+    border: 2px solid #ffffff;
+    background: rgba(243, 243, 243, 0.432);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gallery-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gallery-thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: row;
+      overflow-x: auto;
+    }
+  }
+
+  .gallery-thumbnail {
+    flex: 1;
+    max-width: 200px;
+    aspect-ratio: 1;
+    border: 2px solid #ffffff;
+    border-left: none;
+    border-top: none;
+    background: rgba(243, 243, 243, 0.432);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+
+    &:first-child {
+      border-top: 2px solid #ffffff;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &.active {
+      background: rgba(243, 243, 243, 0.7);
+      opacity: 1;
+    }
+
+    @media screen and (max-width: 768px) {
+      flex: 1;
+      width: 25%;
+      height: auto;
+      max-width: none;
+      border-left: none;
+      border-top: none;
+
+      &:first-child {
+        border-left: 2px solid #ffffff;
+        border-top: none;
+      }
+    }
+  }
+
+  .gallery-thumb-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gallery-buy-button {
+    display: block;
+    width: 100%;
+    padding: 2rem;
+    background: rgba(243, 243, 243, 0.432);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    border: 2px solid #ffffff;
+    font-family: Inter, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: rgba(243, 243, 243, 0.6);
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 1.5rem;
+      padding: 1.5rem;
     }
   }
 </style>
