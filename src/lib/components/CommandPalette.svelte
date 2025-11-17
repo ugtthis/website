@@ -340,7 +340,7 @@
   }
 
   .nav-items {
-    padding: 0 12px 16px;
+    padding: 0 0 16px;
     display: flex;
     flex-direction: column;
     gap: 4px;
