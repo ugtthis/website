@@ -75,7 +75,11 @@
       searchInput = '';
       isKeyboardNavigation = false;
       if (browser) {
-        setTimeout(() => searchInputElement?.focus(), 0);
+        // Prevent Safari URL bar from hiding when opening menu on mobile
+        const isMobile = window.matchMedia('(max-width: 500px)').matches;
+        if (!isMobile) {
+          setTimeout(() => searchInputElement?.focus(), 0);
+        }
       }
     }
   }
