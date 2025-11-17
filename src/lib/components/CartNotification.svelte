@@ -17,13 +17,11 @@
 <style>
   .cart-notification {
     position: relative;
-    min-width: auto;
     height: 32px;
     background-color: rgba(4, 255, 0, 0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 2px solid #333333;
-    border-radius: 0;
+    border: 3px solid #123315;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,7 +29,6 @@
     padding: 0 12px;
     cursor: pointer;
     transition: all 0.2s;
-    box-sizing: border-box;
     animation: slideIn 0.3s ease-out;
   }
 
@@ -53,35 +50,32 @@
   }
 
   .cart-notification:hover {
-    background-color: rgba(42, 42, 42, 1);
+    background-color: rgb(0, 0, 0);
     border-color: #51ff00;
   }
 
   .cart-notification:hover .cart-label,
   .cart-notification:hover .cart-badge {
-    color: #51ff00;
+    color: #6cea31;
   }
 
   .cart-notification:active {
     transform: scale(0.95);
   }
 
-  .cart-label {
-    color: #000000;
+  .cart-label,
+  .cart-badge {
+    color: rgb(41, 41, 41);
     font-size: 12px;
     font-weight: 600;
     font-family: Inter, sans-serif;
-    line-height: 1;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
   }
 
-  .cart-badge {
-    color: #000000;
-    font-size: 12px;
-    font-weight: 600;
-    font-family: Inter, sans-serif;
-    line-height: 1;
-    text-align: center;
+  @media (max-width: 500px) {
+    .cart-label,
+    .cart-badge {
+      font-size: 14px;
+    }
   }
 </style>
