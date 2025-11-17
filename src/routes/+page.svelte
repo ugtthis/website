@@ -1,20 +1,24 @@
 <script>
   import FourImage from "$lib/images/products/comma-four/four_screen_on_1.png";
   import DiamondGradient from "$lib/images/diamond-gradient-2.png";
-  import MonumentExtendedBlack from "$lib/fonts/MonumentExtended/MonumentExtended-Black.woff2";
   import ExplodedSpecs from "$lib/images/exploded-specs-blur.png";
   import ExplodedSpecsMobile from "$lib/images/mobile-exploded-specs-blur.png";
   import CompatBrandsBanner from "$lib/images/compat-brands-banner.png";
   import DrivingCabinPov from "$lib/images/driving-cabin-pov.png";
+
   import GalleryFront from "$lib/images/products/comma-four/gallery/four_front.png";
   import GallerySide from "$lib/images/products/comma-four/gallery/four_side.png";
   import GalleryBack from "$lib/images/products/comma-four/gallery/four_back.png";
   import GalleryAngled from "$lib/images/products/comma-four/gallery/four_angled.png";
+
+  import MonumentExtendedBlack from "$lib/fonts/MonumentExtended/MonumentExtended-Black.woff2";
+
   import LightningIcon from "$lib/icons/ui/lightning-fast.svg?raw";
   import CalendarIcon from "$lib/icons/ui/calendar.svg?raw";
   import WifiIcon from "$lib/icons/ui/wifi.svg?raw";
   import MoneyIcon from "$lib/icons/ui/money.svg?raw";
   import CordIcon from "$lib/icons/ui/cord.svg?raw";
+
   import { vehicleCountText } from "$lib/constants/vehicles.js";
 
   const galleryImages = [

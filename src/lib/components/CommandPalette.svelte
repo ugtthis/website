@@ -4,6 +4,7 @@
   import { goto } from '$app/navigation';
   import { page } from '$app/stores';
   import { clickOutside } from '$lib/utils/clickOutside';
+
   import CommaIcon from '$lib/icons/comma.svg?raw';
   import CmdKIcon from '$lib/icons/ui/cmd-k.svg?raw';
   import SteeringWheelIcon from '$lib/icons/ui/steering-wheel.svg?raw';
