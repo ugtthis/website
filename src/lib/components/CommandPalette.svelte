@@ -14,7 +14,7 @@
   import SupportQuestionIcon from '$lib/icons/support-question.svg?raw';
 
   const navItems = [
-    { label: 'COMMA FOUR', href: '/', icon: SteeringWheelIcon },
+    { label: 'HOME', href: '/', icon: SteeringWheelIcon },
     { label: 'SHOP', href: '/shop', icon: CartIcon },
     { label: 'BLOG', href: 'https://blog.comma.ai', icon: TextBlogIcon, external: true },
     { label: 'OPENPILOT', href: 'https://github.com/commaai/openpilot', icon: NewWindowIcon, external: true },
