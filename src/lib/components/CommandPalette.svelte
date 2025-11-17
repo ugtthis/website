@@ -20,7 +20,7 @@
     { label: 'BLOG', href: 'https://blog.comma.ai', icon: TextBlogIcon, external: true },
     { label: 'OPENPILOT', href: 'https://github.com/commaai/openpilot', icon: NewWindowIcon, external: true },
     { label: 'JOBS', href: '/jobs', icon: LightningBoltIcon },
-    { label: 'SUPPORT', href: '/support', icon: SupportQuestionIcon }
+    { label: 'FAQ', href: '/support', icon: SupportQuestionIcon }
   ];
 
   let isOpen = false;
