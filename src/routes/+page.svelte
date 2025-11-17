@@ -15,6 +15,7 @@
   import WifiIcon from "$lib/icons/ui/wifi.svg?raw";
   import MoneyIcon from "$lib/icons/ui/money.svg?raw";
   import CordIcon from "$lib/icons/ui/cord.svg?raw";
+  import { vehicleCountText } from "$lib/constants/vehicles.js";
 
   const galleryImages = [
     { src: GalleryFront, alt: "comma four front" },
@@ -73,7 +74,7 @@
 <section class="banners-section banner-compat-brands">
   <div class="banner-container">
     <img src={CompatBrandsBanner} alt="Compatible car brands" class="banner-image" />
-    <h2 class="banner-text">Works with over<br>325+ cars</h2>
+    <h2 class="banner-text">Works with over<br>{vehicleCountText} cars</h2>
   </div>
 </section>
 
