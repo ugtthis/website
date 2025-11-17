@@ -403,6 +403,7 @@
       max-width: calc(100vw - 2rem);
       padding: 0 12px;
       border: 0;
+      box-shadow: none;
     }
 
     .search-trigger {
@@ -427,6 +428,7 @@
       z-index: 1002;
       padding-top: 5rem;
       border: 0;
+      box-shadow: none;
     }
 
     .nav-items {
