@@ -216,7 +216,6 @@
     padding: 0 16px;
     cursor: pointer;
     box-shadow: 0 0 2px 1px rgba(27, 27, 27, 0.9) inset;
-    transition: all 0.2s ease-in-out;
     font-family: 'JetBrains Mono', monospace;
     position: relative;
     z-index: 1001;
@@ -281,12 +280,6 @@
     inset: 0;
     background-color: rgba(0, 0, 0, 0.2);
     z-index: 999;
-    animation: fadeIn 0.2s ease-out;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
   }
 
   .expanded-content {
@@ -306,22 +299,8 @@
       inset 10px 0 3px -6px rgba(218, 218, 218, 0.25),
       inset 0 -10px 3px -6px rgba(218, 218, 218, 0.25);
     overflow: hidden;
-    animation: expandDown 0.3s ease-out;
     z-index: 1000;
     padding: 16px 12px 0;
-  }
-
-  @keyframes expandDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-      max-height: 0;
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-      max-height: 600px;
-    }
   }
 
   .search-input {
@@ -337,7 +316,6 @@
     font-size: 16px;
     font-family: 'JetBrains Mono', monospace;
     outline: none;
-    transition: border-color 0.2s;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   }
 
@@ -366,7 +344,6 @@
     padding: 12px 16px;
     text-decoration: none;
     color: #fff;
-    transition: all 0.15s;
     border: 2px solid transparent;
     cursor: pointer;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
@@ -448,7 +425,6 @@
       max-height: 100dvh;
       overflow-y: auto;
       z-index: 1002;
-      animation: fadeIn 0.2s ease-out;
       padding-top: 5rem;
       border: 0;
     }
@@ -460,6 +436,8 @@
     .backdrop-overlay {
       background-color: rgba(0, 0, 0, 0.7);
       z-index: 1001;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
     }
   }
 </style>
