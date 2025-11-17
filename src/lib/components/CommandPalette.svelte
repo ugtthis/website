@@ -1,5 +1,5 @@
 <script>
-  import { onMount, onDestroy } from 'svelte';
+  import { onDestroy } from 'svelte';
   import { browser } from '$app/environment';
   import { goto } from '$app/navigation';
   import { page } from '$app/stores';
@@ -22,32 +22,39 @@
     { label: 'SUPPORT', href: '/support', icon: SupportQuestionIcon }
   ];
 
-  $: currentPath = $page.url.pathname;
-  $: currentPageItem = navItems.reduce((match, item) => {
-    if (item.external) return match;
-    const pathMatches = item.href === '/'
-      ? currentPath === '/'
-      : currentPath === item.href || currentPath.startsWith(item.href + '/');
-    return pathMatches && item.href.length > (match?.href.length || 0) ? item : match;
-  }, null);
-  $: highlightedIndex = currentPageItem ? filteredItems.indexOf(currentPageItem) : -1;
-
   let isOpen = false;
   let searchInput = '';
   let selectedIndex = 0;
   let searchInputElement;
   let paletteElement;
-  let isKeyboardNavigation = false;
+  let isUsingKeyboard = false;
+
+  function findCurrentPageItem(pathname) {
+    return navItems.reduce((best, item) => {
+      if (item.external) return best;
+
+      const isMatch = item.href === '/'
+        ? pathname === '/'
+        : pathname === item.href || pathname.startsWith(item.href + '/');
+
+      if (isMatch && (!best || item.href.length > best.href.length)) {
+        return item;
+      }
+      return best;
+    }, null);
+  }
 
   $: filteredItems = navItems.filter(item =>
-    item.label.toLowerCase().includes(searchInput.toLowerCase())
+    item.label.toLowerCase().startsWith(searchInput.toLowerCase())
   );
+
+  $: currentPageItem = findCurrentPageItem($page.url.pathname);
+  $: currentPageIndex = currentPageItem ? filteredItems.indexOf(currentPageItem) : -1;
 
   $: if (filteredItems.length > 0 && selectedIndex >= filteredItems.length) {
     selectedIndex = 0;
   }
 
-  // Disable body scroll when palette is open on mobile
   $: if (browser && isOpen) {
     const isMobile = window.matchMedia('(max-width: 500px)').matches;
     if (isMobile) {
@@ -71,11 +78,10 @@
       closePalette();
     } else {
       isOpen = true;
-      selectedIndex = Math.max(0, highlightedIndex);
+      selectedIndex = Math.max(0, currentPageIndex);
       searchInput = '';
-      isKeyboardNavigation = false;
+      isUsingKeyboard = false;
       if (browser) {
-        // Prevent Safari URL bar from hiding when opening menu on mobile
         const isMobile = window.matchMedia('(max-width: 500px)').matches;
         if (!isMobile) {
           setTimeout(() => searchInputElement?.focus(), 0);
@@ -88,10 +94,10 @@
     isOpen = false;
     searchInput = '';
     selectedIndex = 0;
-    isKeyboardNavigation = false;
+    isUsingKeyboard = false;
   }
 
-  function handleKeydown(event) {
+  function handleGlobalKeydown(event) {
     if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
       event.preventDefault();
       togglePalette();
@@ -106,12 +112,12 @@
         break;
       case 'ArrowDown':
         event.preventDefault();
-        isKeyboardNavigation = true;
+        isUsingKeyboard = true;
         selectedIndex = (selectedIndex + 1) % filteredItems.length;
         break;
       case 'ArrowUp':
         event.preventDefault();
-        isKeyboardNavigation = true;
+        isUsingKeyboard = true;
         selectedIndex = selectedIndex === 0 ? filteredItems.length - 1 : selectedIndex - 1;
         break;
       case 'Enter':
@@ -123,19 +129,19 @@
     }
   }
 
-  onMount(() => {
-    if (browser) {
-      document.addEventListener('keydown', handleKeydown);
-    }
-  });
+  function selectItemOnHover(index) {
+    isUsingKeyboard = false;
+    selectedIndex = index;
+  }
 
   onDestroy(() => {
     if (browser) {
-      document.removeEventListener('keydown', handleKeydown);
       document.body.style.overflow = '';
     }
   });
 </script>
+
+<svelte:window on:keydown={handleGlobalKeydown} />
 
 <div class="command-palette-wrapper" bind:this={paletteElement} use:clickOutside on:clickOutside={closePalette}>
   <button
@@ -171,21 +177,15 @@
         />
       </div>
 
-      <div class="nav-items" class:keyboard-navigation={isKeyboardNavigation}>
+      <div class="nav-items" data-keyboard-active={isUsingKeyboard}>
         {#each filteredItems as item, index}
           <a
             href={item.href}
             class="nav-item"
-            class:highlighted={index === highlightedIndex}
-            class:selected={index === selectedIndex && index !== highlightedIndex}
+            class:current={index === currentPageIndex}
+            class:selected={index === selectedIndex && index !== currentPageIndex}
             on:click|preventDefault={() => navigateToItem(item)}
-            on:mouseenter={() => {
-              if (isKeyboardNavigation) {
-                isKeyboardNavigation = false;
-              } else {
-                selectedIndex = index;
-              }
-            }}
+            on:mouseenter={() => selectItemOnHover(index)}
           >
             <span class="icon">{@html item.icon}</span>
             <span class="label">{item.label}</span>
@@ -204,7 +204,6 @@
     z-index: 1000;
   }
 
-  /* Button when closed */
   .search-trigger {
     width: 100%;
     height: 48px;
@@ -225,7 +224,6 @@
     z-index: 1001;
   }
 
-  /* Hover effect - desktop only (not mobile) */
   @media (hover: hover) {
     .search-trigger:hover:not(.active) {
       background-color: #c9c9c9b2;
@@ -233,7 +231,6 @@
     }
   }
 
-  /* Button when expanded/open */
   .search-trigger.active {
     background-color: rgba(42, 42, 42, 0.4);
     backdrop-filter: blur(20px);
@@ -279,7 +276,6 @@
     height: 19px;
   }
 
-  /* Backdrop Overlay */
   .backdrop-overlay {
     position: fixed;
     top: 0;
@@ -300,7 +296,6 @@
     }
   }
 
-  /* Expanded Content */
   .expanded-content {
     position: absolute;
     top: 100%;
@@ -330,7 +325,6 @@
     }
   }
 
-  /* Search Container */
   .search-container {
     padding: 16px 20px;
   }
@@ -363,7 +357,6 @@
     letter-spacing: 1px;
   }
 
-  /* Navigation Items */
   .nav-items {
     padding: 0 12px 16px;
     display: flex;
@@ -385,18 +378,17 @@
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
   }
 
-  .nav-item.highlighted {
+  .nav-item.current {
     border-color: #fff;
     background-color: rgba(255, 255, 255, 0.15);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   }
 
-  .nav-item.selected:not(.highlighted) {
+  .nav-item.selected:not(.current) {
     background-color: rgba(255, 255, 255, 0.15);
   }
 
-  /* Hover disabled when using keyboard navigation */
-  .nav-items:not(.keyboard-navigation) .nav-item:hover {
+  .nav-items[data-keyboard-active="false"] .nav-item:hover {
     background-color: rgba(255, 255, 255, 0.15);
   }
 
@@ -425,7 +417,6 @@
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
   }
 
-  /* Responsive - Mobile */
   @media (max-width: 500px) {
     .command-palette-wrapper {
       width: 100%;
