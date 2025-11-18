@@ -278,7 +278,9 @@
   .backdrop-overlay {
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
     z-index: 999;
   }
 
