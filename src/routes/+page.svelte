@@ -1,5 +1,5 @@
 <script>
-  import FourImage from "$lib/images/products/comma-four/four_screen_on_1.png";
+  import FourImage from "$lib/images/products/comma-four/four_screen_on.png";
   import DiamondGradient from "$lib/images/diamond-gradient-2.png";
   import ExplodedSpecs from "$lib/images/exploded-specs-blur.png";
   import ExplodedSpecsMobile from "$lib/images/mobile-exploded-specs-blur.png";
@@ -10,8 +10,6 @@
   import GallerySide from "$lib/images/products/comma-four/gallery/four_side.png";
   import GalleryBack from "$lib/images/products/comma-four/gallery/four_back.png";
   import GalleryAngled from "$lib/images/products/comma-four/gallery/four_angled.png";
-
-  import MonumentExtendedBlack from "$lib/fonts/MonumentExtended/MonumentExtended-Black.woff2";
 
   import LightningIcon from "$lib/icons/ui/lightning-fast.svg?raw";
   import CalendarIcon from "$lib/icons/ui/calendar.svg?raw";
@@ -36,16 +34,7 @@
 </script>
 
 <svelte:head>
-  <link
-    rel="preload"
-    href={MonumentExtendedBlack}
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-  />
-  <link rel="preload" as="image" href={DiamondGradient} />
-  <link rel="preload" as="image" href={FourImage} />
-  <link rel="preload" as="image" href="/binary-pattern.svg" />
+  <link rel="preload" as="image" href="/binary-pattern.svg" fetchpriority="high" />
 </svelte:head>
 
 <div class="page-wrapper">
