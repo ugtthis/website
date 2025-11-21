@@ -87,10 +87,10 @@
       </div>
     </div>
     <nav class="navbar-section-links">
-      <a href="/openpilot">openpilot</a>
-      <a href="/shop/comma-four">comma four</a>
-      <a href="/vehicles">compatibility</a>
-      <a href="/jobs">jobs</a>
+      <a href="/openpilot" class:active={$page.url.pathname.startsWith('/openpilot')}>openpilot</a>
+      <a href="/shop/comma-four" class:active={$page.url.pathname.startsWith('/shop/comma-four')}>comma four</a>
+      <a href="/vehicles" class:active={$page.url.pathname.startsWith('/vehicles')}>compatibility</a>
+      <a href="/jobs" class:active={$page.url.pathname.startsWith('/jobs')}>jobs</a>
     </nav>
     <div class="navbar-section-buttons">
       <a class="button shop" href="/shop">
@@ -244,6 +244,12 @@
       margin: 0 1.75rem;
       font-family: Inter, sans-serif;
       font-size: 1.125rem;
+      transition: text-shadow 0.2s;
+    }
+
+    & a.active {
+      text-shadow: 0 0 8px rgba(81, 255, 0, 0.8),
+                   0 0 12px rgba(81, 255, 0, 0.5);
     }
 
     @media only screen and (max-width: 1280px) {
