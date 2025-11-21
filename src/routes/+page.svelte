@@ -129,8 +129,8 @@
     <h1 class="mb-7 sm-mb-3">openpilot can drive for hours without driver action.</h1>
     <Grid columns={2} rowGap="3rem">
       <h1>
-        It works on {vehicleCountText} car models
-        <span class="muted">from Toyota, Hyundai, Honda, and more.</span>
+        It works on {vehicleCountText} car models from 27 brands.
+        <span class="muted">Is your car supported?</span>
       </h1>
       <div>
         <FeaturedCarsList />
