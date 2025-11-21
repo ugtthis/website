@@ -118,7 +118,7 @@
     </Grid>
     <h1 class="mt-4">Buy it, plug it in, and engage.</h1>
     <h3 class="muted">
-      comma four works with the car you already drive. It's like Tesla Autopilot
+      comma four works with the car you already drive. It's active driver assistance
       for your Toyota, Honda, and more.
     </h3>
   </div>
