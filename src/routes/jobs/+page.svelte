@@ -32,12 +32,12 @@
     </p>
 
     <div class="divider"></div>
-    <pre>
-  comma is a profitable consumer electronics business. For every dollar we make, half goes to building comma fours and half goes to engineering to improve the product.
-
-  No advertising, MBAs, or agenda beyond solving self-driving cars.
-  <img src="https://pbs.twimg.com/media/GrU0TykaoAA2KOU?format=jpg&amp;name=large" style="width: 80%;">
-    </pre>
+    <p>
+      comma is a profitable consumer electronics business. For every dollar we make, half goes to building comma fours and half goes to engineering to improve the product.
+    </p>
+    <p>
+      No advertising, MBAs, or agenda beyond solving self-driving cars.
+    </p>
 
     <div class="divider"></div>
     <pre>
