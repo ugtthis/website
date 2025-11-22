@@ -196,8 +196,6 @@
 <style>
   .hero-image {
     position: relative;
-    /* Behind nav bar */
-    top: -66px;
     width: 100%;
     height: 100vh;
     overflow: hidden;
