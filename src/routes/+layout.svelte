@@ -87,6 +87,7 @@
       </div>
     </div>
     <nav class="navbar-section-links">
+      <a href="/" class:active={$page.url.pathname === '/'}>home</a>
       <a href="/openpilot" class:active={$page.url.pathname.startsWith('/openpilot')}>openpilot</a>
       <a href="/shop/comma-four" class:active={$page.url.pathname.startsWith('/shop/comma-four')}>comma four</a>
       <a href="/vehicles" class:active={$page.url.pathname.startsWith('/vehicles')}>compatibility</a>

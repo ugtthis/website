@@ -25,6 +25,7 @@
     tabindex="-1"
   >
     <div class="section-links">
+      <a href="/">home</a>
       <a href="/openpilot">openpilot</a>
       <a href="/shop/comma-four">comma four</a>
       <a href="/shop">shop</a>
