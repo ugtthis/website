@@ -196,10 +196,11 @@
 <style>
   .hero-image {
     position: relative;
+    /* Behind nav bar */
+    margin: -66px 0 0;
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    margin: 0;
     padding: 0;
     user-select: none;
     -webkit-user-drag: none;
