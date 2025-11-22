@@ -1,6 +1,8 @@
 <script>
   import Grid from "$lib/components/Grid.svelte";
 
+  import LinusTechTipsLogo from "$lib/images/featured-articles/linus-tech-tips.svg";
+  import SnazzyLabsLogo from "$lib/images/featured-articles/snazzy-labs.png";
   import TheVergeLogo from "$lib/images/featured-articles/the-verge.svg";
   import CarAndDriverLogo from "$lib/images/featured-articles/car-and-driver.png";
   import ConsumerReportsLogo from "$lib/images/featured-articles/consumer-reports.png";
@@ -11,6 +13,12 @@
 <div class="featured-articles">
   <span>Featured in</span>
   <Grid columns={6} columnGap="0.5rem" size="large">
+    <a href="https://www.youtube.com/watch?v=GY8ruVimG8M">
+      <img src={LinusTechTipsLogo} alt="Logo of Linus Tech Tips" />
+    </a>
+    <a href="https://www.youtube.com/watch?v=GY8ruVimG8M">
+      <img src={SnazzyLabsLogo} alt="Logo of Snazzy Labs" />
+    </a>
     <a
       href="https://www.theverge.com/23548094/george-hotz-comma-3-driver-assist-hands-free-demo"
     >
@@ -31,15 +39,15 @@
     >
       <img src={RoadShowLogo} alt="Logo of Road Show" />
     </a>
-    <a
-      href="https://www.youtube.com/watch?v=pfTUNEi7DEE"
-      style="font-size: 1.75rem; font-weight: 800; font-style: italic;">JRGo</a
-    >
-    <a
-      href="https://www.thedrive.com/tech/36604/we-tested-openpilot-the-1199-device-that-adds-entry-level-autonomy-to-your-car/"
-    >
-      <img src={TheDriveLogo} alt="Logo of The Drive" />
-    </a>
+<!--    <a-->
+<!--      href="https://www.youtube.com/watch?v=pfTUNEi7DEE"-->
+<!--      style="font-size: 1.75rem; font-weight: 800; font-style: italic;">JRGo</a-->
+<!--    >-->
+<!--    <a-->
+<!--      href="https://www.thedrive.com/tech/36604/we-tested-openpilot-the-1199-device-that-adds-entry-level-autonomy-to-your-car/"-->
+<!--    >-->
+<!--      <img src={TheDriveLogo} alt="Logo of The Drive" />-->
+<!--    </a>-->
   </Grid>
 </div>
 
@@ -72,14 +80,14 @@
     border: 1px solid #000;
     justify-content: center;
     align-items: center;
-    padding: 0.875rem;
+    padding: 1.25rem;
     text-decoration: none;
     max-width: 100%;
     height: 40px;
     transition: background-color 0.2s;
 
     & img {
-      height: 35px;
+      height: 45px;
       display: inline-block;
       vertical-align: middle;
       object-fit: contain;
