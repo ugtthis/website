@@ -245,7 +245,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      height: 420px;
+      height: 180px;
       background: linear-gradient(to bottom, transparent, black);
       z-index: 2;
       pointer-events: none;
