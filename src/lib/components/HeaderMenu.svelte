@@ -34,7 +34,7 @@
       <a href="/setup">setup guide</a>
       <a href="/support">support & FAQs</a>
       <a href="https://blog.comma.ai">blog</a>
-      <a href="/jobs.html">jobs - we're hiring!</a>
+      <a href="/jobs">jobs - we're hiring!</a>
     </div>
     <div class="news-feed">
       <div class="blog">
