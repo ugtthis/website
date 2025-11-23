@@ -63,6 +63,20 @@
         showCart.set(false);
       }
     });
+
+    // Focus mailing list input when hash is #mailing-list
+    const focusMailingList = () => {
+      if (window.location.hash === '#mailing-list') {
+        setTimeout(() => {
+          const input = document.querySelector('#mailing-list input[type="email"]');
+          if (input) input.focus();
+        }, 300);
+      }
+    };
+
+    // Check on load and on hash change
+    focusMailingList();
+    window.addEventListener('hashchange', focusMailingList);
   });
 
   printConsoleBanner();
@@ -158,7 +172,7 @@
       <div class="footer-links">
         <div class="tagline">{@html CommaIcon}<span>make driving chill</span></div>
         <SocialIcons size="1.5rem" />
-        <div class="mailing-list">
+        <div id="mailing-list" class="mailing-list">
           <MailingListForm style="primary" />
         </div>
       </div>
