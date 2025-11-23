@@ -40,6 +40,6 @@
 
 <style>
   #product-item {
-    padding-bottom: 5rem;
+    padding-bottom: 2rem;
   }
 </style>
