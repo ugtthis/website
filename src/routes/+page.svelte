@@ -174,7 +174,7 @@
             </div>
           </Grid>
         </div>
-        <LinkButton href="shop/comma-four" fullWidth={true} style="accent">
+        <LinkButton href="/shop/comma-four" fullWidth={true} style="accent">
           Buy now
         </LinkButton>
       </div>

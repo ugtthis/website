@@ -234,7 +234,7 @@ export const products = {
       {
         title: "Note",
         content: `For US customers only, requires $24/month comma prime subscription you can purchase at
-        <a href="http://connect.comma.ai/" target="_blank">connect.comma.ai</a>.`,
+        <a href="https://connect.comma.ai/" target="_blank">connect.comma.ai</a>.`,
       }
     ],
     description: `
@@ -515,7 +515,7 @@ export const products = {
         they're not too heavy and not too warm. They have a double-lined hood for warmth,
         a soft interior lining, and - get this - the pocket is also lined with soft fleece!
         Men's sizing. Black fabric with a white printed comma on the front, and
-        <a href="http://comma.ai/" target="_blank">comma.ai</a> graphic on the back.
+        <a href="https://comma.ai/" target="_blank">comma.ai</a> graphic on the back.
         Hoodie comes stringless.
       </p>
     `.trim()
