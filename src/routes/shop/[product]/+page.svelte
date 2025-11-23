@@ -40,10 +40,6 @@
 
 <style>
   #product-item {
-    padding: 7rem 0 2rem;
-
-    @media only screen and (max-width: 1150px) {
-      padding: 10rem 0 2rem;
-    }
+    padding-bottom: 5rem;
   }
 </style>
