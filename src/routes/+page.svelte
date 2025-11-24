@@ -174,7 +174,7 @@
             </div>
           </Grid>
         </div>
-        <LinkButton href="shop/comma-four" fullWidth={true} style="accent">
+        <LinkButton href="/shop/comma-four" fullWidth={true} style="accent">
           Buy now
         </LinkButton>
       </div>
@@ -182,7 +182,7 @@
     <h1 class="mt-4">Buy it, plug it in, and engage.</h1>
     <h3 class="muted">
       comma four works with the car you already drive. It's active driver assistance
-      for your Toyota, Honda, and more.
+      for your Toyota, Hyundai, Ford, and more.
     </h3>
   </div>
 </section>
