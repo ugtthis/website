@@ -37,9 +37,3 @@
     {/if}
   </div>
 </section>
-
-<style>
-  #product-item {
-    padding-bottom: 2rem;
-  }
-</style>

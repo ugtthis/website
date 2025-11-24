@@ -61,10 +61,6 @@
 </section>
 
 <style>
-  #trade-in {
-    padding-bottom: 2rem;
-  }
-
   h1 {
     font-size: 2.5rem;
     font-weight: 600;
