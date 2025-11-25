@@ -115,6 +115,13 @@
   });
 </script>
 
+<svelte:head>
+  <script
+    src="https://www.paypal.com/sdk/js?client-id=AUFLR5Zk9El_ATQigqwpSnsqkCBFtW1iuLEhFXMD-w8OUYziE5qCPNRRHQPdgKdQOSKn4_YqSxdK6Tpz&components=messages"
+    data-namespace="PayPalSDK">
+  </script>
+</svelte:head>
+
 <Product {product} {additionalProductIds} {backordered} {beforeAddToCart} {getCartNote} priceOverride={FOUR_PRICE}
          disableBuyButtonText={disableBuyButtonText}>
   <div slot="shipping"></div>
@@ -131,6 +138,15 @@
   </div>
 
   <span slot="price-accessory">
+    <div
+      class="paypal-message"
+      data-pp-message
+      data-pp-style-layout="text"
+      data-pp-style-logo-type="inline"
+      data-pp-style-text-color="black"
+      data-pp-amount={priceDueToday}
+      data-pp-language="">
+    </div>
     <div class="badge">
       <Badge style="dark">Free rush shipping</Badge>
     </div>
@@ -278,6 +294,10 @@
     background-color: rgba(134, 255, 78, 0.15);
     border-bottom: 2px solid #86ff4e;
     padding: 0 2px;
+  }
+
+  .paypal-message {
+    margin-top: 1rem;
   }
 
   .price-due-today {
