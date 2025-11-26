@@ -149,7 +149,7 @@
     </div>
     <div class="paypal-offer-info">
       <span class="highlight">Limited Time Offer:</span>
-      Get 20% cash back when you Pay Later. Save <a href="https://www.paypal.com/us/digital-wallet/ways-to-pay/buy-now-pay-later" target="_blank">this offer</a> to take advantage of this promotion through December 8.
+      Get 20% cash back when you checkout with PayPal Pay Later. Save <a href="https://www.paypal.com/us/digital-wallet/ways-to-pay/buy-now-pay-later" target="_blank">this offer</a> to take advantage of this promotion through December 8.
     </div>
     <div class="badge">
       <Badge style="dark">Free rush shipping</Badge>
