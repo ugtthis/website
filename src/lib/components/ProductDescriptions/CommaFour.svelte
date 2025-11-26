@@ -22,8 +22,10 @@
   import { formatCurrency } from "$lib/utils/currency";
 
   export let product;
-  let additionalProductIds = [];
   let disableBuyButtonText = "SELECT YOUR CAR";
+
+  let harnessSelectorRef;
+  let checkboxCardRef;
 
   let showDisclaimerModal = false;
   let onProceed;
@@ -60,19 +62,19 @@
   $: priceDueToday = showDiscount ? FOUR_PRICE - discountAmount : FOUR_PRICE;
   $: priceAfterTradeIn = tradeInChecked ? priceDueToday - tradeInCredit : priceDueToday;
 
-  const updateAdditionalProductIds = () => {
-    additionalProductIds = [];
+  $: additionalProductIds = (() => {
+    const ids = [];
     if (selectedHarness && selectedHarness !== NO_HARNESS_OPTION) {
-      additionalProductIds.push(selectedHarness.id);
+      ids.push(selectedHarness.id);
     }
     if (tradeInChecked && tradeInVariantId) {
-      additionalProductIds.push(tradeInVariantId);
+      ids.push(tradeInVariantId);
     }
-  }
+    return ids;
+  })();
 
   const handleHarnessSelection = (value) => {
     selectedHarness = value;
-    updateAdditionalProductIds();
     if (value === NO_HARNESS_OPTION) {
       backordered = null;
       disableBuyButtonText = null;
@@ -88,14 +90,19 @@
 
   const handleTradeInToggle = () => {
     tradeInChecked = !tradeInChecked;
-    updateAdditionalProductIds();
   }
 
   onMount(async () => {
     // Autofill trade-in checkbox
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('trade-in') === '1') {
-      tradeInChecked = true;
+      if (checkboxCardRef) {
+        checkboxCardRef.setChecked(true);
+        tradeInChecked = true;
+      }
+      if (harnessSelectorRef) {
+        harnessSelectorRef.setSelection(NO_HARNESS_OPTION);
+      }
     }
 
     // Fetch trade-in product variant ID
@@ -159,12 +166,13 @@
 
     <strong>Select a harness to connect the comma four to your car.</strong>
     <HarnessSelector
+      bind:this={harnessSelectorRef}
       label="Select your car"
       onChange={handleHarnessSelection}
       showNoHarnessOption={true}
     >
     </HarnessSelector>
-    <CheckboxCard title="$250 credit with trade-in" checked={tradeInChecked} onToggle={handleTradeInToggle}>
+    <CheckboxCard bind:this={checkboxCardRef} title="$250 credit with trade-in" checked={tradeInChecked} onToggle={handleTradeInToggle}>
       Get $250 credit when you trade in your old comma device. Any comma device, in any condition.
       <a href="/shop/comma-four-trade-in">Instructions and Terms</a>
     </CheckboxCard>
