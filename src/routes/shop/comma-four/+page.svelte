@@ -175,7 +175,7 @@
             <span>Display</span>
           </div>
           <div class="contents">
-            300 PPI OLED display
+            1.9" 300 PPI OLED display
           </div>
         </div>
         <div class="spec-card">
