@@ -86,6 +86,12 @@
       disableBuyButtonText = "SELECT YOUR CAR";
     }
     backordered = '1-12 weeks';
+
+    // Reset trade-in checkbox
+    if (!value && checkboxCardRef) {
+      checkboxCardRef.setChecked(false);
+      tradeInChecked = false;
+    }
   }
 
   const handleTradeInToggle = () => {
@@ -172,7 +178,8 @@
       showNoHarnessOption={true}
     >
     </HarnessSelector>
-    <CheckboxCard bind:this={checkboxCardRef} title="$250 credit with trade-in" checked={tradeInChecked} onToggle={handleTradeInToggle}>
+    <CheckboxCard bind:this={checkboxCardRef} title="$250 credit with trade-in" checked={tradeInChecked} onToggle={handleTradeInToggle}
+                  disabled={disableBuyButtonText !== null}>
       Get $250 credit when you trade in your old comma device. Any comma device, in any condition.
       <a href="/shop/comma-four-trade-in">Instructions and Terms</a>
     </CheckboxCard>
