@@ -44,7 +44,7 @@
     --background-color: {backgroundColor ?? (style === 'light' ? 'white' : 'black')};
   "
 >
-  <input {type} name={id} {id} {checked} on:click={toggleContent} bind:this={inputEl} />
+  <input {type} name={id} {id} {checked} on:click={toggleContent} on:click bind:this={inputEl} />
   <label for={id}>
     <slot name="label"></slot>
     <span class="chevron">{@html IconChevron}</span>
