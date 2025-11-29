@@ -11,7 +11,6 @@
   import FourImage from "$lib/images/products/comma-four/four_screen_on.png";
   import OBDCCableImage from "$lib/images/products/obd-c-cable/obd-c-cable-four.png";
   import ReplacementMountsImage from "$lib/images/products/replacement-mounts/replacement-mounts-four.png";
-  import CarHarnessImage from "$lib/images/products/car-harness/car-harness.jpg";
   import CarBrandCollageImage from "$lib/images/car-brand-collage.jpg";
   import CoolingImage from "$lib/images/products/comma-four/cooling.png";
   import DeviceFrameImage from "$lib/images/products/comma-four/four_front.png";
@@ -64,10 +63,6 @@
         <div>
           <img src={ReplacementMountsImage} loading="lazy" alt="mount">
           <p>2 mounts</p>
-        </div>
-        <div>
-          <img src={CarHarnessImage} loading="lazy" alt="car harness">
-          <p>car harness <span style="color: var(--color-muted)">(optional)</span></p>
         </div>
       </div>
     </Grid>
