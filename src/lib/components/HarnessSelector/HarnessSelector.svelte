@@ -6,7 +6,6 @@
   import { tick } from 'svelte';
   import { clickOutside } from '$lib/utils/clickOutside';
   import { allHarnesses, vehicleHarnesses, genericHarnesses } from '$lib/utils/harnesses';
-  import { selectedCar } from '../../../store';
   import { NO_HARNESS_OPTION } from '$lib/constants/vehicles.js';
 
   import NoteCard from '$lib/components/NoteCard.svelte';
@@ -38,13 +37,6 @@
     // Don't update w/ initial state
     onChange(selection);
     updateQueryParams(selection);
-
-    // remember with cookie
-    if (selection?.car) {
-      selectedCar.set(selection.car);
-    } else {
-      selectedCar.set('');
-    }
   }
 
   function updateQueryParams(selectedHarness) {
