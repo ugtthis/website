@@ -1,4 +1,6 @@
 <script>
+  import { page } from '$app/stores';
+
   import ProductPage from "../[product]/+page.svelte";
   import Grid from "$lib/components/Grid.svelte";
   import LinkButton from "$lib/components/LinkButton.svelte";
@@ -7,10 +9,12 @@
   import Space from "$lib/components/Space.svelte";
 
   import { faq } from "$lib/constants/faq.svelte";
+  import { vehicleCountText, NO_HARNESS_OPTION } from '$lib/constants/vehicles.js';
 
   import FourImage from "$lib/images/products/comma-four/four_screen_on.png";
   import OBDCCableImage from "$lib/images/products/obd-c-cable/obd-c-cable-four.png";
   import ReplacementMountsImage from "$lib/images/products/replacement-mounts/replacement-mounts-four.png";
+  import CarHarnessImage from "$lib/images/products/car-harness/car-harness.jpg";
   import CarBrandCollageImage from "$lib/images/car-brand-collage.jpg";
   import CoolingImage from "$lib/images/products/comma-four/cooling.png";
   import DeviceFrameImage from "$lib/images/products/comma-four/four_front.png";
@@ -28,9 +32,11 @@
   import DisplayIcon from "$lib/icons/features/display.svg?raw";
   import CableIcon from "$lib/icons/features/cable.svg?raw";
   import LocationIcon from "$lib/icons/features/location.svg?raw";
-  import { vehicleCountText } from '$lib/constants/vehicles.js';
 
   export let data;
+
+  $: harnessParam = $page.url.searchParams.get('harness');
+  $: hasHarness = harnessParam && decodeURIComponent(harnessParam) !== NO_HARNESS_OPTION.car;
 </script>
 
 <ProductPage {data} />
@@ -51,7 +57,7 @@
     <hr />
     <Grid rowGap="0" templateColumns="0.5fr 1.25fr">
       <h2>In the Box</h2>
-      <div class="box-contents">
+      <div class="box-contents" class:has-harness={hasHarness}>
         <div>
           <img src={FourImage} loading="lazy" alt="comma four device">
           <p>comma four</p>
@@ -64,6 +70,12 @@
           <img src={ReplacementMountsImage} loading="lazy" alt="mount">
           <p>2 mounts</p>
         </div>
+        {#if hasHarness}
+        <div>
+          <img src={CarHarnessImage} loading="lazy" alt="car harness">
+          <p>car harness</p>
+        </div>
+        {/if}
       </div>
     </Grid>
     <hr />
@@ -394,8 +406,14 @@
       gap: 2rem;
       text-align: center;
 
+      &.has-harness {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       @media screen and (max-width: 768px) {
-        grid-template-columns: 1fr;
+        &, &.has-harness {
+          grid-template-columns: 1fr;
+        }
       }
 
       & img {
