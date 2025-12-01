@@ -1,4 +1,5 @@
 <script>
+  import { browser } from '$app/environment';
   import { page } from '$app/stores';
 
   import ProductPage from "../[product]/+page.svelte";
@@ -35,7 +36,7 @@
 
   export let data;
 
-  $: harnessParam = $page.url.searchParams.get('harness');
+  $: harnessParam = browser ? $page.url.searchParams.get('harness') : null;
   $: hasHarness = harnessParam && decodeURIComponent(harnessParam) !== NO_HARNESS_OPTION.car;
 </script>
 
